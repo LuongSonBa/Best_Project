@@ -24,7 +24,7 @@ import jakarta.transaction.Transactional;
 public class ComputerService {
     private final ComputerRepository computerRepository;
     private final ManufactureRepository manufactureRepository;
-    private final ComputerMapper computerMapper; // Bạn cần tạo thêm ComputerMapper tương tự ProductMapper
+    private final ComputerMapper computerMapper;
     private static final Logger log = LoggerFactory.getLogger(ComputerService.class);
 
     public ComputerService(ComputerRepository computerRepository, 
