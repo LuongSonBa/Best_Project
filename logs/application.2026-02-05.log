@@ -1,0 +1,394 @@
+2026-02-05 08:36:52 WARN  [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9h59m16s789ms259µs800ns).
+2026-02-05 08:38:00 INFO  [http-nio-9095-exec-9] com.example.login.controller.ProductPageController - Request list products page=0, size=4
+2026-02-05 08:38:00 INFO  [http-nio-9095-exec-9] com.example.login.service.ProductService - Load products page=0, size=4
+2026-02-05 08:38:00 TRACE [http-nio-9095-exec-7] org.zalando.logbook.Logbook - Incoming Request: 9c8414ff49a3dc01
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770206986846_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?1
+sec-ch-ua-platform: "Android"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Mobile Safari/537.36
+2026-02-05 08:38:00 TRACE [http-nio-9095-exec-7] org.zalando.logbook.Logbook - Outgoing Response: 9c8414ff49a3dc01
+Duration: 8 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Wed, 04 Feb 2026 23:38:00 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-05 08:38:03 INFO  [http-nio-9095-exec-6] com.example.login.controller.ProductPageController - Request product detail with id=1
+2026-02-05 08:38:03 INFO  [http-nio-9095-exec-6] com.example.login.service.ProductService - Load product detail id=1
+2026-02-05 08:38:03 INFO  [http-nio-9095-exec-6] com.example.login.controller.ProductPageController - Product loaded successfully: id=1, name=Product 1
+2026-02-05 08:38:03 TRACE [http-nio-9095-exec-3] org.zalando.logbook.Logbook - Incoming Request: a9dc5c3afd5b4060
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770206986846_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products/1
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?1
+sec-ch-ua-platform: "Android"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Mobile Safari/537.36
+2026-02-05 08:38:03 TRACE [http-nio-9095-exec-3] org.zalando.logbook.Logbook - Outgoing Response: a9dc5c3afd5b4060
+Duration: 8 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Wed, 04 Feb 2026 23:38:03 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-05 08:38:06 INFO  [http-nio-9095-exec-5] com.example.login.controller.ProductPageController - Request list products page=0, size=4
+2026-02-05 08:38:06 INFO  [http-nio-9095-exec-5] com.example.login.service.ProductService - Load products page=0, size=4
+2026-02-05 08:38:06 TRACE [http-nio-9095-exec-1] org.zalando.logbook.Logbook - Incoming Request: c813e3e8fa2b67c6
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770206986846_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?1
+sec-ch-ua-platform: "Android"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Mobile Safari/537.36
+2026-02-05 08:38:06 TRACE [http-nio-9095-exec-1] org.zalando.logbook.Logbook - Outgoing Response: c813e3e8fa2b67c6
+Duration: 8 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Wed, 04 Feb 2026 23:38:06 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-05 08:38:09 INFO  [http-nio-9095-exec-2] com.example.login.controller.ProductPageController - Request product detail with id=3
+2026-02-05 08:38:09 INFO  [http-nio-9095-exec-2] com.example.login.service.ProductService - Load product detail id=3
+2026-02-05 08:38:09 INFO  [http-nio-9095-exec-2] com.example.login.controller.ProductPageController - Product loaded successfully: id=3, name=Product 3
+2026-02-05 08:38:09 ERROR [http-nio-9095-exec-3] com.example.login.service.ProductService - Lỗi khi đọc file: default.png
+2026-02-05 08:38:09 ERROR [http-nio-9095-exec-3] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Could not read file: default.png] with root cause
+java.lang.RuntimeException: File not found default.png
+	at com.example.login.service.storage.FileStorageServiceImpl.loadFile(FileStorageServiceImpl.java:41)
+	at com.example.login.service.ProductService.getFile(ProductService.java:91)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728)
+	at com.example.login.service.ProductService$$SpringCGLIB$$0.getFile(<generated>)
+	at com.example.login.controller.ProductController.getFile(ProductController.java:65)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.zalando.logbook.servlet.LogbookFilter.doFilter(LogbookFilter.java:76)
+	at org.zalando.logbook.servlet.HttpFilter.doFilter(HttpFilter.java:32)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:66)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:125)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:213)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:319)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$4(HandlerMappingIntrospector.java:267)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:240)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.zalando.logbook.servlet.LogbookFilter.doFilter(LogbookFilter.java:76)
+	at org.zalando.logbook.servlet.SecureLogbookFilter.doFilter(SecureLogbookFilter.java:32)
+	at org.zalando.logbook.servlet.HttpFilter.doFilter(HttpFilter.java:32)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-02-05 08:38:17 INFO  [http-nio-9095-exec-8] com.example.login.controller.ProductController - Update Product successful! ID = 3
+2026-02-05 08:38:17 TRACE [http-nio-9095-exec-8] org.zalando.logbook.Logbook - Incoming Request: f1731b0f7c29b2fd
+Remote: 0:0:0:0:0:0:0:1
+PUT http://localhost:9095/api/products/3 HTTP/1.1
+accept: */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+content-length: 183226
+content-type: multipart/form-data; boundary=----WebKitFormBoundaryC22dxtWluM3FTAjl
+cookie: XXX
+host: localhost:9095
+origin: http://localhost:9095
+referer: http://localhost:9095/products/3
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?1
+sec-ch-ua-platform: "Android"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Mobile Safari/537.36
+x-csrf-token: XXX
+
+<multipart>
+2026-02-05 08:38:17 TRACE [http-nio-9095-exec-8] org.zalando.logbook.Logbook - Outgoing Response: f1731b0f7c29b2fd
+Duration: 376 ms
+HTTP/1.1 200 OK
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Type: application/json
+Date: Wed, 04 Feb 2026 23:38:17 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+Transfer-Encoding: chunked
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+{"name":"Product 3","price":120.0,"description":"Description 3","manufactureId":null,"active":null,"imagePath":"1770248297489_cartop.jpg","id":3,"manufactureName":null}
+2026-02-05 08:38:18 INFO  [http-nio-9095-exec-6] com.example.login.controller.ProductPageController - Request product detail with id=3
+2026-02-05 08:38:18 INFO  [http-nio-9095-exec-6] com.example.login.service.ProductService - Load product detail id=3
+2026-02-05 08:38:18 INFO  [http-nio-9095-exec-6] com.example.login.controller.ProductPageController - Product loaded successfully: id=3, name=Product 3
+2026-02-05 08:38:19 TRACE [http-nio-9095-exec-10] org.zalando.logbook.Logbook - Incoming Request: f63d126224ea6eb3
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770248297489_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products/3
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?1
+sec-ch-ua-platform: "Android"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Mobile Safari/537.36
+2026-02-05 08:38:19 TRACE [http-nio-9095-exec-10] org.zalando.logbook.Logbook - Outgoing Response: f63d126224ea6eb3
+Duration: 24 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Wed, 04 Feb 2026 23:38:19 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-05 08:38:21 INFO  [http-nio-9095-exec-4] com.example.login.controller.ProductPageController - Request list products page=0, size=4
+2026-02-05 08:38:21 INFO  [http-nio-9095-exec-4] com.example.login.service.ProductService - Load products page=0, size=4
+2026-02-05 08:38:21 TRACE [http-nio-9095-exec-3] org.zalando.logbook.Logbook - Incoming Request: a63c56518fcccffc
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770206986846_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?1
+sec-ch-ua-platform: "Android"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Mobile Safari/537.36
+2026-02-05 08:38:21 TRACE [http-nio-9095-exec-3] org.zalando.logbook.Logbook - Outgoing Response: a63c56518fcccffc
+Duration: 13 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Wed, 04 Feb 2026 23:38:21 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-05 08:38:21 TRACE [http-nio-9095-exec-8] org.zalando.logbook.Logbook - Incoming Request: ecf7db243ff7cf60
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770248297489_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?1
+sec-ch-ua-platform: "Android"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Mobile Safari/537.36
+2026-02-05 08:38:21 TRACE [http-nio-9095-exec-8] org.zalando.logbook.Logbook - Outgoing Response: ecf7db243ff7cf60
+Duration: 19 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Wed, 04 Feb 2026 23:38:21 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-05 11:40:14 WARN  [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h34m21s393ms997µs200ns).

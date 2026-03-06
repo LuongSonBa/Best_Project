@@ -1,0 +1,1406 @@
+2026-02-06 00:28:14 WARN  [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12h47m29s412ms611µs99ns).
+2026-02-06 14:35:03 WARN  [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=14h6m54s84ms804µs501ns).
+2026-02-06 14:35:56 INFO  [http-nio-9095-exec-10] com.example.login.controller.ProductPageController - Request list products page=0, size=4
+2026-02-06 14:35:56 INFO  [http-nio-9095-exec-10] com.example.login.service.ProductService - Load products page=0, size=4
+2026-02-06 14:35:56 TRACE [http-nio-9095-exec-5] org.zalando.logbook.Logbook - Incoming Request: a6b2cde6eabb577d
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770206986846_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-02-06 14:35:56 TRACE [http-nio-9095-exec-5] org.zalando.logbook.Logbook - Outgoing Response: a6b2cde6eabb577d
+Duration: 6 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Fri, 06 Feb 2026 05:35:56 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-06 14:35:56 TRACE [http-nio-9095-exec-1] org.zalando.logbook.Logbook - Incoming Request: fef42b8bee66cea3
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770248297489_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-02-06 14:35:56 TRACE [http-nio-9095-exec-1] org.zalando.logbook.Logbook - Outgoing Response: fef42b8bee66cea3
+Duration: 9 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Fri, 06 Feb 2026 05:35:56 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-06 14:35:58 INFO  [http-nio-9095-exec-8] com.example.login.controller.ProductPageController - Request product detail with id=1
+2026-02-06 14:35:58 INFO  [http-nio-9095-exec-8] com.example.login.service.ProductService - Load product detail id=1
+2026-02-06 14:35:58 INFO  [http-nio-9095-exec-8] com.example.login.controller.ProductPageController - Product loaded successfully: id=1, name=Product 1
+2026-02-06 14:35:58 TRACE [http-nio-9095-exec-2] org.zalando.logbook.Logbook - Incoming Request: bbc307c71ae088a8
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770206986846_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products/1
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-02-06 14:35:58 TRACE [http-nio-9095-exec-2] org.zalando.logbook.Logbook - Outgoing Response: bbc307c71ae088a8
+Duration: 8 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Fri, 06 Feb 2026 05:35:58 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-06 14:36:02 INFO  [http-nio-9095-exec-10] com.example.login.controller.ProductController - Update Product successful! ID = 1
+2026-02-06 14:36:02 TRACE [http-nio-9095-exec-10] org.zalando.logbook.Logbook - Incoming Request: ad19584a7fb978f8
+Remote: 0:0:0:0:0:0:0:1
+PUT http://localhost:9095/api/products/1 HTTP/1.1
+accept: */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+content-length: 272
+content-type: multipart/form-data; boundary=----WebKitFormBoundaryZ6uMX7ZO2AqzRuhU
+cookie: XXX
+host: localhost:9095
+origin: http://localhost:9095
+referer: http://localhost:9095/products/1
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+x-csrf-token: XXX
+
+<multipart>
+2026-02-06 14:36:02 TRACE [http-nio-9095-exec-10] org.zalando.logbook.Logbook - Outgoing Response: ad19584a7fb978f8
+Duration: 12 ms
+HTTP/1.1 200 OK
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Type: application/json
+Date: Fri, 06 Feb 2026 05:36:02 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+Transfer-Encoding: chunked
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+{"name":"Product 1","price":100.0,"description":"Description 1","manufactureId":null,"active":null,"imagePath":"1770206986846_cartop.jpg","id":1,"manufactureName":null}
+2026-02-06 14:36:03 INFO  [http-nio-9095-exec-9] com.example.login.controller.ProductPageController - Request product detail with id=1
+2026-02-06 14:36:03 INFO  [http-nio-9095-exec-9] com.example.login.service.ProductService - Load product detail id=1
+2026-02-06 14:36:03 INFO  [http-nio-9095-exec-9] com.example.login.controller.ProductPageController - Product loaded successfully: id=1, name=Product 1
+2026-02-06 14:36:03 TRACE [http-nio-9095-exec-6] org.zalando.logbook.Logbook - Incoming Request: a2219fcb464468b4
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770206986846_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products/1
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-02-06 14:36:03 TRACE [http-nio-9095-exec-6] org.zalando.logbook.Logbook - Outgoing Response: a2219fcb464468b4
+Duration: 10 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Fri, 06 Feb 2026 05:36:03 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-06 14:36:04 INFO  [http-nio-9095-exec-1] com.example.login.controller.ProductPageController - Request list products page=0, size=4
+2026-02-06 14:36:04 INFO  [http-nio-9095-exec-1] com.example.login.service.ProductService - Load products page=0, size=4
+2026-02-06 14:36:04 TRACE [http-nio-9095-exec-7] org.zalando.logbook.Logbook - Incoming Request: feff23753c2a08e6
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770248297489_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-02-06 14:36:04 TRACE [http-nio-9095-exec-4] org.zalando.logbook.Logbook - Incoming Request: d736cd34977b1cee
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770206986846_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-02-06 14:36:04 TRACE [http-nio-9095-exec-4] org.zalando.logbook.Logbook - Outgoing Response: d736cd34977b1cee
+Duration: 5 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Fri, 06 Feb 2026 05:36:04 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-06 14:36:04 TRACE [http-nio-9095-exec-7] org.zalando.logbook.Logbook - Outgoing Response: feff23753c2a08e6
+Duration: 5 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Fri, 06 Feb 2026 05:36:04 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-06 14:36:06 INFO  [http-nio-9095-exec-9] com.example.login.controller.ProductPageController - Request product detail with id=4
+2026-02-06 14:36:06 INFO  [http-nio-9095-exec-9] com.example.login.service.ProductService - Load product detail id=4
+2026-02-06 14:36:06 INFO  [http-nio-9095-exec-9] com.example.login.controller.ProductPageController - Product loaded successfully: id=4, name=Product 4
+2026-02-06 14:36:07 ERROR [http-nio-9095-exec-5] com.example.login.service.ProductService - Lỗi khi đọc file: default.png
+2026-02-06 14:36:07 ERROR [http-nio-9095-exec-5] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Could not read file: default.png] with root cause
+java.lang.RuntimeException: File not found default.png
+	at com.example.login.service.storage.FileStorageServiceImpl.loadFile(FileStorageServiceImpl.java:41)
+	at com.example.login.service.ProductService.getFile(ProductService.java:91)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728)
+	at com.example.login.service.ProductService$$SpringCGLIB$$0.getFile(<generated>)
+	at com.example.login.controller.ProductController.getFile(ProductController.java:65)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.zalando.logbook.servlet.LogbookFilter.doFilter(LogbookFilter.java:76)
+	at org.zalando.logbook.servlet.HttpFilter.doFilter(HttpFilter.java:32)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:66)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:125)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:213)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:319)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$4(HandlerMappingIntrospector.java:267)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:240)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.zalando.logbook.servlet.LogbookFilter.doFilter(LogbookFilter.java:76)
+	at org.zalando.logbook.servlet.SecureLogbookFilter.doFilter(SecureLogbookFilter.java:32)
+	at org.zalando.logbook.servlet.HttpFilter.doFilter(HttpFilter.java:32)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-02-06 14:36:15 INFO  [http-nio-9095-exec-1] com.example.login.controller.ProductController - Update Product successful! ID = 4
+2026-02-06 14:36:15 TRACE [http-nio-9095-exec-1] org.zalando.logbook.Logbook - Incoming Request: c53462f7424f6bec
+Remote: 0:0:0:0:0:0:0:1
+PUT http://localhost:9095/api/products/4 HTTP/1.1
+accept: */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+content-length: 183225
+content-type: multipart/form-data; boundary=----WebKitFormBoundaryK9wGQAR01vG73opY
+cookie: XXX
+host: localhost:9095
+origin: http://localhost:9095
+referer: http://localhost:9095/products/4
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+x-csrf-token: XXX
+
+<multipart>
+2026-02-06 14:36:15 TRACE [http-nio-9095-exec-1] org.zalando.logbook.Logbook - Outgoing Response: c53462f7424f6bec
+Duration: 84 ms
+HTTP/1.1 200 OK
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Type: application/json
+Date: Fri, 06 Feb 2026 05:36:15 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+Transfer-Encoding: chunked
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+{"name":"Product 4","price":130.0,"description":"Description 4","manufactureId":2,"active":null,"imagePath":"1770356175324_cartop.jpg","id":4,"manufactureName":"Manufacture 2"}
+2026-02-06 14:36:16 INFO  [http-nio-9095-exec-8] com.example.login.controller.ProductPageController - Request product detail with id=4
+2026-02-06 14:36:16 INFO  [http-nio-9095-exec-8] com.example.login.service.ProductService - Load product detail id=4
+2026-02-06 14:36:16 INFO  [http-nio-9095-exec-8] com.example.login.controller.ProductPageController - Product loaded successfully: id=4, name=Product 4
+2026-02-06 14:36:16 TRACE [http-nio-9095-exec-2] org.zalando.logbook.Logbook - Incoming Request: d165c28dc7567782
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770356175324_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products/4
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-02-06 14:36:16 TRACE [http-nio-9095-exec-2] org.zalando.logbook.Logbook - Outgoing Response: d165c28dc7567782
+Duration: 16 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Fri, 06 Feb 2026 05:36:16 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-06 14:36:17 INFO  [http-nio-9095-exec-7] com.example.login.controller.ProductPageController - Request list products page=0, size=4
+2026-02-06 14:36:17 INFO  [http-nio-9095-exec-7] com.example.login.service.ProductService - Load products page=0, size=4
+2026-02-06 14:36:17 TRACE [http-nio-9095-exec-5] org.zalando.logbook.Logbook - Incoming Request: eb3688b7d8cb2128
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770356175324_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-02-06 14:36:17 TRACE [http-nio-9095-exec-3] org.zalando.logbook.Logbook - Incoming Request: fa9328b1eb2d25d5
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770206986846_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-02-06 14:36:17 TRACE [http-nio-9095-exec-5] org.zalando.logbook.Logbook - Outgoing Response: eb3688b7d8cb2128
+Duration: 25 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Fri, 06 Feb 2026 05:36:17 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-06 14:36:17 TRACE [http-nio-9095-exec-3] org.zalando.logbook.Logbook - Outgoing Response: fa9328b1eb2d25d5
+Duration: 41 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Fri, 06 Feb 2026 05:36:17 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-06 14:36:17 TRACE [http-nio-9095-exec-6] org.zalando.logbook.Logbook - Incoming Request: 821799fcc7718f5b
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770248297489_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-02-06 14:36:17 TRACE [http-nio-9095-exec-6] org.zalando.logbook.Logbook - Outgoing Response: 821799fcc7718f5b
+Duration: 47 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Fri, 06 Feb 2026 05:36:17 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-06 14:36:19 INFO  [http-nio-9095-exec-4] com.example.login.controller.ProductPageController - Request list products page=1, size=5
+2026-02-06 14:36:19 INFO  [http-nio-9095-exec-4] com.example.login.service.ProductService - Load products page=1, size=5
+2026-02-06 14:36:21 INFO  [http-nio-9095-exec-9] com.example.login.controller.ProductPageController - Request list products page=0, size=5
+2026-02-06 14:36:21 INFO  [http-nio-9095-exec-9] com.example.login.service.ProductService - Load products page=0, size=5
+2026-02-06 14:36:21 TRACE [http-nio-9095-exec-3] org.zalando.logbook.Logbook - Incoming Request: 9a849e1829f143b2
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770356175324_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products?page=0&size=5
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-02-06 14:36:21 TRACE [http-nio-9095-exec-3] org.zalando.logbook.Logbook - Outgoing Response: 9a849e1829f143b2
+Duration: 25 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Fri, 06 Feb 2026 05:36:21 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-06 14:36:21 TRACE [http-nio-9095-exec-5] org.zalando.logbook.Logbook - Incoming Request: 9f29ce7f7fad0016
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770248297489_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products?page=0&size=5
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-02-06 14:36:21 TRACE [http-nio-9095-exec-5] org.zalando.logbook.Logbook - Outgoing Response: 9f29ce7f7fad0016
+Duration: 29 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Fri, 06 Feb 2026 05:36:21 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-06 14:36:21 TRACE [http-nio-9095-exec-1] org.zalando.logbook.Logbook - Incoming Request: fb88885e7cb8a3ec
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770206986846_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products?page=0&size=5
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-02-06 14:36:21 TRACE [http-nio-9095-exec-1] org.zalando.logbook.Logbook - Outgoing Response: fb88885e7cb8a3ec
+Duration: 32 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Fri, 06 Feb 2026 05:36:21 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-06 14:38:26 INFO  [http-nio-9095-exec-3] com.example.login.controller.ProductPageController - Request product detail with id=1
+2026-02-06 14:38:26 INFO  [http-nio-9095-exec-3] com.example.login.service.ProductService - Load product detail id=1
+2026-02-06 14:38:26 INFO  [http-nio-9095-exec-3] com.example.login.controller.ProductPageController - Product loaded successfully: id=1, name=Product 1
+2026-02-06 14:38:26 TRACE [http-nio-9095-exec-5] org.zalando.logbook.Logbook - Incoming Request: 94cec931bba78bf6
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770206986846_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products/1
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-02-06 14:38:26 TRACE [http-nio-9095-exec-5] org.zalando.logbook.Logbook - Outgoing Response: 94cec931bba78bf6
+Duration: 20 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Fri, 06 Feb 2026 05:38:26 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-06 14:38:32 INFO  [http-nio-9095-exec-10] com.example.login.controller.ProductPageController - Request list products page=0, size=4
+2026-02-06 14:38:32 INFO  [http-nio-9095-exec-10] com.example.login.service.ProductService - Load products page=0, size=4
+2026-02-06 14:38:32 TRACE [http-nio-9095-exec-7] org.zalando.logbook.Logbook - Incoming Request: dfef5ccceace1ff3
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770206986846_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-02-06 14:38:32 TRACE [http-nio-9095-exec-9] org.zalando.logbook.Logbook - Incoming Request: 93baec380ac44b3d
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770248297489_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-02-06 14:38:32 TRACE [http-nio-9095-exec-8] org.zalando.logbook.Logbook - Incoming Request: fae9ce7ae2d2d466
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770356175324_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-02-06 14:38:32 TRACE [http-nio-9095-exec-9] org.zalando.logbook.Logbook - Outgoing Response: 93baec380ac44b3d
+Duration: 16 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Fri, 06 Feb 2026 05:38:32 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-06 14:38:32 TRACE [http-nio-9095-exec-7] org.zalando.logbook.Logbook - Outgoing Response: dfef5ccceace1ff3
+Duration: 16 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Fri, 06 Feb 2026 05:38:32 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-06 14:38:32 TRACE [http-nio-9095-exec-8] org.zalando.logbook.Logbook - Outgoing Response: fae9ce7ae2d2d466
+Duration: 16 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Fri, 06 Feb 2026 05:38:32 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-06 14:38:51 INFO  [http-nio-9095-exec-6] com.example.login.controller.ProductPageController - Request product detail with id=1
+2026-02-06 14:38:51 INFO  [http-nio-9095-exec-6] com.example.login.service.ProductService - Load product detail id=1
+2026-02-06 14:38:51 INFO  [http-nio-9095-exec-6] com.example.login.controller.ProductPageController - Product loaded successfully: id=1, name=Product 1
+2026-02-06 14:38:51 TRACE [http-nio-9095-exec-5] org.zalando.logbook.Logbook - Incoming Request: fb44ca6c4694cfe6
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770206986846_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products/1
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-02-06 14:38:51 TRACE [http-nio-9095-exec-5] org.zalando.logbook.Logbook - Outgoing Response: fb44ca6c4694cfe6
+Duration: 11 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Fri, 06 Feb 2026 05:38:51 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-06 14:39:18 INFO  [http-nio-9095-exec-2] com.example.login.controller.ProductController - Update Product successful! ID = 1
+2026-02-06 14:39:18 TRACE [http-nio-9095-exec-2] org.zalando.logbook.Logbook - Incoming Request: b0e314e2c08a839e
+Remote: 0:0:0:0:0:0:0:1
+PUT http://localhost:9095/api/products/1 HTTP/1.1
+accept: */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+content-length: 272
+content-type: multipart/form-data; boundary=----WebKitFormBoundaryvLucXwu9WlbWdk7k
+cookie: XXX
+host: localhost:9095
+origin: http://localhost:9095
+referer: http://localhost:9095/products/1
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+x-csrf-token: XXX
+
+<multipart>
+2026-02-06 14:39:18 TRACE [http-nio-9095-exec-2] org.zalando.logbook.Logbook - Outgoing Response: b0e314e2c08a839e
+Duration: 16 ms
+HTTP/1.1 200 OK
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Type: application/json
+Date: Fri, 06 Feb 2026 05:39:18 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+Transfer-Encoding: chunked
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+{"name":"Product 1","price":100.0,"description":"Description 1","manufactureId":null,"active":null,"imagePath":"1770206986846_cartop.jpg","id":1,"manufactureName":null}
+2026-02-06 14:39:19 INFO  [http-nio-9095-exec-4] com.example.login.controller.ProductPageController - Request product detail with id=1
+2026-02-06 14:39:19 INFO  [http-nio-9095-exec-4] com.example.login.service.ProductService - Load product detail id=1
+2026-02-06 14:39:19 INFO  [http-nio-9095-exec-4] com.example.login.controller.ProductPageController - Product loaded successfully: id=1, name=Product 1
+2026-02-06 14:39:20 TRACE [http-nio-9095-exec-7] org.zalando.logbook.Logbook - Incoming Request: 9adcc7fffc4fb8d1
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770206986846_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products/1
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-02-06 14:39:20 TRACE [http-nio-9095-exec-7] org.zalando.logbook.Logbook - Outgoing Response: 9adcc7fffc4fb8d1
+Duration: 22 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Fri, 06 Feb 2026 05:39:20 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-06 14:39:52 INFO  [http-nio-9095-exec-10] com.example.login.controller.ProductPageController - Request list products page=0, size=4
+2026-02-06 14:39:52 INFO  [http-nio-9095-exec-10] com.example.login.service.ProductService - Load products page=0, size=4
+2026-02-06 14:39:52 TRACE [http-nio-9095-exec-2] org.zalando.logbook.Logbook - Incoming Request: dccd9cf906affec2
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770248297489_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-02-06 14:39:52 TRACE [http-nio-9095-exec-2] org.zalando.logbook.Logbook - Outgoing Response: dccd9cf906affec2
+Duration: 13 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Fri, 06 Feb 2026 05:39:52 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-06 14:39:52 TRACE [http-nio-9095-exec-4] org.zalando.logbook.Logbook - Incoming Request: 96a950890486ef3f
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770356175324_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-02-06 14:39:52 TRACE [http-nio-9095-exec-4] org.zalando.logbook.Logbook - Outgoing Response: 96a950890486ef3f
+Duration: 13 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Fri, 06 Feb 2026 05:39:52 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-06 14:41:53 INFO  [http-nio-9095-exec-10] com.example.login.controller.ProductPageController - Request list products page=0, size=4
+2026-02-06 14:41:53 INFO  [http-nio-9095-exec-10] com.example.login.service.ProductService - Load products page=0, size=4
+2026-02-06 14:41:53 TRACE [http-nio-9095-exec-2] org.zalando.logbook.Logbook - Incoming Request: 857c8a46ad169a93
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770356175324_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-02-06 14:41:53 TRACE [http-nio-9095-exec-9] org.zalando.logbook.Logbook - Incoming Request: cd3f93e6706ea180
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770206986846_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-02-06 14:41:53 TRACE [http-nio-9095-exec-2] org.zalando.logbook.Logbook - Outgoing Response: 857c8a46ad169a93
+Duration: 14 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Fri, 06 Feb 2026 05:41:53 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-06 14:41:53 TRACE [http-nio-9095-exec-3] org.zalando.logbook.Logbook - Incoming Request: f720b4a345f7fa6d
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770248297489_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-02-06 14:41:53 TRACE [http-nio-9095-exec-9] org.zalando.logbook.Logbook - Outgoing Response: cd3f93e6706ea180
+Duration: 23 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Fri, 06 Feb 2026 05:41:53 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-06 14:41:53 TRACE [http-nio-9095-exec-3] org.zalando.logbook.Logbook - Outgoing Response: f720b4a345f7fa6d
+Duration: 22 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Fri, 06 Feb 2026 05:41:53 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-06 14:42:12 INFO  [http-nio-9095-exec-8] com.example.login.controller.ProductPageController - Request list products page=0, size=4
+2026-02-06 14:42:12 INFO  [http-nio-9095-exec-8] com.example.login.service.ProductService - Load products page=0, size=4
+2026-02-06 14:42:12 TRACE [http-nio-9095-exec-1] org.zalando.logbook.Logbook - Incoming Request: d37d74ead7cc6655
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770206986846_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-02-06 14:42:12 TRACE [http-nio-9095-exec-5] org.zalando.logbook.Logbook - Incoming Request: f6ad0e3e306931a0
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770356175324_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-02-06 14:42:12 TRACE [http-nio-9095-exec-5] org.zalando.logbook.Logbook - Outgoing Response: f6ad0e3e306931a0
+Duration: 33 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Fri, 06 Feb 2026 05:42:12 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-06 14:42:12 TRACE [http-nio-9095-exec-1] org.zalando.logbook.Logbook - Outgoing Response: d37d74ead7cc6655
+Duration: 35 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Fri, 06 Feb 2026 05:42:12 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-06 14:42:12 TRACE [http-nio-9095-exec-10] org.zalando.logbook.Logbook - Incoming Request: 8b31e1025f96add1
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770248297489_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-02-06 14:42:12 TRACE [http-nio-9095-exec-10] org.zalando.logbook.Logbook - Outgoing Response: 8b31e1025f96add1
+Duration: 52 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Fri, 06 Feb 2026 05:42:12 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-06 14:42:20 INFO  [RMI TCP Connection(53)-127.0.0.1] org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2026-02-06 14:42:20 INFO  [RMI TCP Connection(53)-127.0.0.1] org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-06 14:42:20 INFO  [tomcat-shutdown] org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-9095"]
+2026-02-06 14:42:20 INFO  [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-02-06 14:42:20 INFO  [RMI TCP Connection(53)-127.0.0.1] org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-9095"]
+2026-02-06 14:42:20 INFO  [RMI TCP Connection(53)-127.0.0.1] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06 14:42:20 INFO  [RMI TCP Connection(53)-127.0.0.1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-06 14:42:20 INFO  [RMI TCP Connection(53)-127.0.0.1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-06 14:42:39 INFO  [background-preinit] org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2026-02-06 14:42:39 INFO  [main] com.example.login.LoginProjectApplication - Starting LoginProjectApplication using Java 21.0.6 with PID 21292 (C:\Users\20251\OneDrive\Desktop\JavaProject\Login_Project\target\classes started by 20251 in C:\Users\20251\OneDrive\Desktop\JavaProject\Login_Project)
+2026-02-06 14:42:39 INFO  [main] com.example.login.LoginProjectApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-06 14:42:40 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-06 14:42:40 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 57 ms. Found 3 JPA repository interfaces.
+2026-02-06 14:42:41 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9095 (http)
+2026-02-06 14:42:41 INFO  [main] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9095"]
+2026-02-06 14:42:41 INFO  [main] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-06 14:42:41 INFO  [main] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
+2026-02-06 14:42:41 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-06 14:42:41 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2498 ms
+2026-02-06 14:42:42 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-06 14:42:42 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@341ccfd1
+2026-02-06 14:42:42 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-06 14:42:42 INFO  [main] org.flywaydb.core.FlywayExecutor - Database: jdbc:mysql://localhost:3306/users?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC (MySQL 8.0)
+2026-02-06 14:42:42 INFO  [main] org.flywaydb.core.internal.command.DbValidate - Successfully validated 9 migrations (execution time 00:00.079s)
+2026-02-06 14:42:42 INFO  [main] org.flywaydb.core.internal.command.DbMigrate - Current version of schema `users`: 9
+2026-02-06 14:42:42 INFO  [main] org.flywaydb.core.internal.command.DbMigrate - Schema `users` is up to date. No migration necessary.
+2026-02-06 14:42:42 INFO  [main] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-06 14:42:43 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.18.Final
+2026-02-06 14:42:43 INFO  [main] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-06 14:42:43 INFO  [main] org.hibernate.envers.boot.internal.EnversServiceImpl - Envers integration enabled? : true
+2026-02-06 14:42:43 INFO  [main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-06 14:42:43 INFO  [main] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.43
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-06 14:42:44 DEBUG [main] org.hibernate.envers.configuration.internal.metadata.AuditMetadataGenerator - Generating first-pass auditing mapping for entity com.example.login.entity.Product
+2026-02-06 14:42:44 INFO  [main] org.hibernate.envers.configuration.internal.metadata.AuditMetadataGenerator - Adding properties for entity: com.example.login.entity.Product
+2026-02-06 14:42:44 DEBUG [main] org.hibernate.envers.configuration.internal.metadata.AuditMetadataGenerator - Generating first-pass auditing mapping for entity com.example.login.entity.Manufacture
+2026-02-06 14:42:44 INFO  [main] org.hibernate.envers.configuration.internal.metadata.AuditMetadataGenerator - Adding properties for entity: com.example.login.entity.Manufacture
+2026-02-06 14:42:44 DEBUG [main] org.hibernate.envers.configuration.internal.metadata.AuditMetadataGenerator - Generating second-pass auditing mapping for entity com.example.login.entity.Product
+2026-02-06 14:42:44 DEBUG [main] org.hibernate.envers.configuration.internal.metadata.AuditMetadataGenerator - Generating second-pass auditing mapping for entity com.example.login.entity.Manufacture
+2026-02-06 14:42:44 DEBUG [main] org.hibernate.envers.configuration.internal.metadata.JoinColumnCollectionMetadataGenerator - Adding audit mapping for property com.example.login.entity.Manufacture.products: one-to-many collection, using a join column on the referenced entity
+2026-02-06 14:42:45 INFO  [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-06 14:42:45 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06 14:42:46 WARN  [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-06 14:42:46 INFO  [main] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-02-06 14:42:46 INFO  [main] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9095"]
+2026-02-06 14:42:47 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 9095 (http) with context path '/'
+2026-02-06 14:42:47 INFO  [main] com.example.login.LoginProjectApplication - Started LoginProjectApplication in 8.447 seconds (process running for 9.458)
+2026-02-06 14:42:51 INFO  [http-nio-9095-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-06 14:42:51 INFO  [http-nio-9095-exec-1] org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-06 14:42:51 INFO  [http-nio-9095-exec-1] org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2026-02-06 14:43:00 INFO  [http-nio-9095-exec-6] com.example.login.controller.ProductPageController - Request list products page=0, size=4
+2026-02-06 14:43:00 INFO  [http-nio-9095-exec-6] com.example.login.service.ProductService - Load products page=0, size=4
+2026-02-06 14:43:00 TRACE [http-nio-9095-exec-7] org.zalando.logbook.Logbook - Incoming Request: dd4c72288e2551c2
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770206986846_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-02-06 14:43:00 TRACE [http-nio-9095-exec-2] org.zalando.logbook.Logbook - Incoming Request: cef8399fff1b33fc
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770356175324_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-02-06 14:43:00 TRACE [http-nio-9095-exec-9] org.zalando.logbook.Logbook - Incoming Request: adca012ddd1568c6
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/1770248297489_cartop.jpg HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+authorization: XXX
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-02-06 14:43:00 TRACE [http-nio-9095-exec-7] org.zalando.logbook.Logbook - Outgoing Response: dd4c72288e2551c2
+Duration: 41 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Fri, 06 Feb 2026 05:43:00 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-06 14:43:00 TRACE [http-nio-9095-exec-2] org.zalando.logbook.Logbook - Outgoing Response: cef8399fff1b33fc
+Duration: 41 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Fri, 06 Feb 2026 05:43:00 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-06 14:43:00 TRACE [http-nio-9095-exec-9] org.zalando.logbook.Logbook - Outgoing Response: adca012ddd1568c6
+Duration: 41 ms
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Content-Length: 182813
+Content-Type: image/jpeg
+Date: Fri, 06 Feb 2026 05:43:00 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+
+<binary>
+2026-02-06 14:43:21 INFO  [http-nio-9095-exec-3] com.example.login.controller.ProductPageController - Request list products page=1, size=5
+2026-02-06 14:43:21 INFO  [http-nio-9095-exec-3] com.example.login.service.ProductService - Load products page=1, size=5
+2026-02-06 14:56:58 WARN  [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8m15s542ms345µs).
+2026-02-06 15:33:02 WARN  [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m3s238ms617µs600ns).
+2026-02-06 15:43:52 WARN  [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m50s729ms757µs).
+2026-02-06 15:51:46 WARN  [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m22s998ms335µs100ns).
+2026-02-06 16:19:17 WARN  [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10m1s471ms222µs400ns).
+2026-02-06 20:07:49 WARN  [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h41m31s598ms471µs300ns).

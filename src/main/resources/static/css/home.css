@@ -1,0 +1,244 @@
+@charset "UTF-8";
+
+/* ================== GLOBAL ================== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 30px;
+    color: #2c3e50;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ================== LAYOUT ================== */
+.flex-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+}
+
+.child {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 260px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.child:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.child img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.highlight {
+    font-weight: bold;
+    color: #34495e;
+    padding: 10px;
+    font-size: 1.1rem;
+    background-color: #ecf0f1;
+}
+
+/* ================== USER INFO ================== */
+#userInfoResult {
+    margin: 20px auto 0;
+    padding: 16px 24px;
+    background: #f0f4f8;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.15);
+    max-width: 400px;
+    color: #222;
+}
+
+#userInfoResult p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+/* ================== PRODUCT TABLE ================== */
+#productList {
+    margin-top: 20px;
+}
+
+.product-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.product-table th,
+.product-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.product-table th {
+    background-color: #f2f2f2;
+}
+
+/* ================== BUTTONS ================== */
+/* User Info */
+#btnUserInfo {
+    background: linear-gradient(135deg, #52c41a, #389e0d);
+    color: #fff;
+    padding: 12px 28px;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 6px 14px rgba(56, 142, 60, 0.35);
+    transition: all 0.25s ease;
+}
+
+#btnUserInfo:hover {
+    background: linear-gradient(135deg, #73d13d, #237804);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(35, 120, 4, 0.45);
+}
+
+/* ===== Layout chung cho nhóm nút ===== */
+#btnGetProducts,
+.btn-goto {
+    display: inline-block;
+    min-width: 220px;      /* Tăng độ rộng */
+    padding: 12px 20px;
+    margin: 10px 12px;     /* Tạo khoảng cách */
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    color: white;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Hover effect */
+#btnGetProducts:hover,
+.btn-goto:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+
+/* ===== Button chính ===== */
+#btnGetProducts {
+    background: linear-gradient(135deg, #1890ff, #096dd9);
+}
+
+/* ===== Nút điều hướng ===== */
+.btn-goto {
+    background: linear-gradient(135deg, #52c41a, #389e0d);
+}
+
+/* Cho các nút xuống dòng nếu không đủ chỗ */
+body {
+    text-align: center;
+}
+
+
+/* Logout */
+a.logout-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 26px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ff4d4f, #cf1322);
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 6px 14px rgba(207, 19, 34, 0.35);
+    transition: all 0.25s ease;
+}
+
+a.logout-btn:hover {
+    background: linear-gradient(135deg, #ff7875, #a8071a);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(168, 7, 26, 0.45);
+}
+
+/* ================== OPTIONS MENU ================== */
+.options-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    text-align: right;
+    z-index: 100;
+}
+
+#btnOptions {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #1890ff, #096dd9);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 5px 12px rgba(24,144,255,0.35);
+    transition: all 0.25s ease;
+}
+
+#btnOptions:hover {
+    background: linear-gradient(135deg, #40a9ff, #0050b3);
+    transform: translateY(-2px);
+}
+
+#optionsMenu {
+    margin-top: 10px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 12px;
+    display: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+#optionsMenu button {
+    width: 100%;
+    margin: 6px 0;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: left;
+    transition: all 0.2s ease;
+}
+
+
+/* Change password */
+#show-change-password {
+    background: linear-gradient(135deg, #faad14, #d48806);
+    color: #fff;
+}
+
+#show-change-password:hover {
+    background: linear-gradient(135deg, #ffc53d, #ad6800);
+}
+
+/* Logout (menu) */
+#optionsMenu button[type="submit"] {
+    background: linear-gradient(135deg, #ff4d4f, #cf1322);
+    color: #fff;
+}
+
+#optionsMenu button[type="submit"]:hover {
+    background: linear-gradient(135deg, #ff7875, #a8071a);
+}

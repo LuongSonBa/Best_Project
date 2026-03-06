@@ -1,0 +1,94 @@
+2026-02-03 02:02:35 WARN  [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4h1m50s638ms700µs600ns).
+2026-02-03 15:30:05 WARN  [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=13h27m34s358ms728µs400ns).
+2026-02-03 16:34:23 WARN  [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m42s975ms905µs200ns).
+2026-02-03 17:30:02 WARN  [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10m8s811ms333µs800ns).
+2026-02-03 17:39:42 WARN  [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m39s513ms714µs100ns).
+2026-02-03 20:19:11 WARN  [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h39m29s451ms532µs700ns).
+2026-02-03 20:26:08 WARN  [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m26s85ms524µs300ns).
+2026-02-03 20:44:20 INFO  [http-nio-9095-exec-3] com.example.login.controller.ProductPageController - Request list products page=0, size=4
+2026-02-03 20:44:20 INFO  [http-nio-9095-exec-3] com.example.login.service.ProductService - Load products page=0, size=4
+2026-02-03 20:44:20 TRACE [http-nio-9095-exec-5] org.zalando.logbook.Logbook - Incoming Request: c3c4c8b672f657c4
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/null HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-02-03 20:44:21 TRACE [http-nio-9095-exec-5] org.zalando.logbook.Logbook - Outgoing Response: c3c4c8b672f657c4
+Duration: 0 ms
+HTTP/1.1 403 Forbidden
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Expires: 0
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+2026-02-03 21:18:05 INFO  [http-nio-9095-exec-8] com.example.login.controller.ProductPageController - Request list products page=0, size=4
+2026-02-03 21:18:05 INFO  [http-nio-9095-exec-8] com.example.login.service.ProductService - Load products page=0, size=4
+2026-02-03 21:18:05 TRACE [http-nio-9095-exec-10] org.zalando.logbook.Logbook - Incoming Request: ffcc253158caa08f
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/null HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-02-03 21:18:05 TRACE [http-nio-9095-exec-10] org.zalando.logbook.Logbook - Outgoing Response: ffcc253158caa08f
+Duration: 0 ms
+HTTP/1.1 403 Forbidden
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Expires: 0
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+2026-02-03 21:18:06 INFO  [http-nio-9095-exec-1] com.example.login.controller.ProductPageController - Request product detail with id=1
+2026-02-03 21:18:06 INFO  [http-nio-9095-exec-1] com.example.login.service.ProductService - Load product detail id=1
+2026-02-03 21:18:06 INFO  [http-nio-9095-exec-1] com.example.login.controller.ProductPageController - Product loaded successfully: id=1, name=Product 1
+2026-02-03 21:18:10 INFO  [http-nio-9095-exec-9] com.example.login.controller.ProductPageController - Request list products page=0, size=4
+2026-02-03 21:18:10 INFO  [http-nio-9095-exec-9] com.example.login.service.ProductService - Load products page=0, size=4
+2026-02-03 21:18:10 TRACE [http-nio-9095-exec-5] org.zalando.logbook.Logbook - Incoming Request: bf1a637f823e0ab9
+Remote: 0:0:0:0:0:0:0:1
+GET http://localhost:9095/api/products/files/null HTTP/1.1
+accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+accept-encoding: gzip, deflate, br, zstd
+accept-language: ja,en-US;q=0.9,en;q=0.8,vi;q=0.7
+connection: keep-alive
+cookie: XXX
+host: localhost:9095
+referer: http://localhost:9095/products
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: image
+sec-fetch-mode: no-cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-02-03 21:18:10 TRACE [http-nio-9095-exec-5] org.zalando.logbook.Logbook - Outgoing Response: bf1a637f823e0ab9
+Duration: 0 ms
+HTTP/1.1 403 Forbidden
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Expires: 0
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0

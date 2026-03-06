@@ -1,0 +1,95 @@
+@charset "UTF-8";
+body { font-family: 'Inter', 'Segoe UI', sans-serif; background: #fff; margin: 0; color: #1a1a1a; }
+.container { max-width: 1400px; margin: 0 auto; padding: 50px 20px; }
+
+.breadcrumb { margin-bottom: 20px; font-size: 15px; color: #666; }
+.breadcrumb a { color: #003d45; text-decoration: none; font-weight: 600; }
+
+.product-layout { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 80px; align-items: start; }
+
+/* Ảnh lớn */
+.main-image { background: #fdfdfd; border: 1px solid #f0f0f0; border-radius: 20px; height: 650px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.main-image img { max-width: 90%; max-height: 85%; object-fit: contain; transition: transform 0.5s; }
+.main-image:hover img { transform: scale(1.05); }
+
+/* Thông tin */
+.brand-name { color: #003d45; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
+.product-title { font-size: 42px; line-height: 1.2; margin: 0 0 20px 0; font-weight: 900; }
+.price-box { background: #f8fbfb; padding: 25px; border-radius: 12px; margin-bottom: 30px; }
+.price-value { font-size: 48px; font-weight: 900; color: #003d45; }
+
+.product-description { font-size: 17px; line-height: 1.7; color: #444; border-left: 4px solid #003d45; padding-left: 20px; }
+
+.btn-add-cart { width: 100%; padding: 22px; background: #003d45; color: white; border: none; border-radius: 50px; font-size: 18px; font-weight: bold; cursor: pointer; margin-bottom: 40px; }
+
+/* Admin Zone */
+.admin-zone { border-top: 2px dashed #eee; padding-top: 30px; }
+.admin-label { font-weight: bold; color: #d9534f; margin-bottom: 15px; }
+.admin-btn-group { display: flex; gap: 15px; }
+.btn-edit, .btn-delete, .btn-save, .btn-cancel { flex: 1; padding: 16px; border-radius: 10px; text-decoration: none; font-weight: 700; text-align: center; border: none; cursor: pointer; color: white; }
+.btn-edit { background: #f0ad4e; }
+.btn-delete { background: #d9534f; }
+
+/* =========================================
+   PHẦN MỚI: CSS CHO CHẾ ĐỘ CHỈNH SỬA TẠI CHỖ
+   ========================================= */
+
+/* Định dạng các ô Input khi chuyển sang chế độ sửa */
+.form-input-title {
+    font-size: 38px;
+    font-weight: 800;
+    width: 100%;
+    border: 2px solid #003d45;
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-family: inherit;
+}
+
+.form-input-price {
+    font-size: 40px;
+    font-weight: 900;
+    color: #003d45;
+    width: 100%;
+    border: 2px solid #003d45;
+    border-radius: 8px;
+    padding: 5px 10px;
+}
+
+.form-input-textarea {
+    width: 100%;
+    font-size: 16px;
+    font-family: inherit;
+    line-height: 1.7;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    resize: vertical;
+}
+
+.form-control-sm {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #003d45;
+    font-weight: bold;
+}
+
+/* Nút Save và Cancel trong chế độ Admin */
+.btn-save { background: #27ae60; margin-right: 5px; }
+.btn-save:hover { background: #219150; }
+
+.btn-cancel { background: #95a5a6; }
+.btn-cancel:hover { background: #7f8c8d; }
+
+.file-upload-wrapper {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.file-upload-wrapper label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}

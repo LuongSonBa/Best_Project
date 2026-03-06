@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm sản phẩm mới</title>
+    <link rel="stylesheet" th:href="@{/css/computers-detail.css}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Thêm sản phẩm mới</h2>
+
+    <div style="margin-bottom:10px;">
+        <label>Tên sản phẩm:</label>
+        <input type="text" id="create-name" class="form-input-title">
+    </div>
+
+    <div style="margin-bottom:10px;">
+        <label>Giá (¥):</label>
+        <input type="number" id="create-price" class="form-input-price">
+    </div>
+
+    <div style="margin-bottom:10px;">
+        <label>Hãng sản xuất:</label>
+        <select id="create-manufacture" class="form-control-sm">
+            <option th:each="m : ${manufactures}"
+                    th:value="${m.id}"
+                    th:text="${m.name}">
+            </option>
+        </select>
+    </div>
+
+    <div style="margin-bottom:10px;">
+        <label>Mô tả:</label>
+        <textarea id="create-description"
+                  rows="4"
+                  class="form-input-textarea"></textarea>
+    </div>
+
+    <div style="margin-bottom:10px;">
+        <label>Ảnh sản phẩm:</label>
+        <input type="file" id="create-image" accept="image/*">
+    </div>
+
+    <div class="admin-btn-group">
+        <button onclick="createProduct()" class="btn-save">
+            TẠO MỚI
+        </button>
+        <a th:href="@{/computers}" class="btn-cancel">HỦY</a>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script th:src="@{/js/computer-add.js}"></script>
+
+</body>
+</html>

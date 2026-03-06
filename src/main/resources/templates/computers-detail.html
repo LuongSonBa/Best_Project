@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8">
+<title>Chi tiết sản phẩm | HP Store</title>
+<link rel="stylesheet" th:href="@{/css/computers-detail.css}">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+	<div class="container">
+		<input type="hidden" id="computer-id" th:value="${computer.id}">
+
+		<nav class="breadcrumb">
+			<a th:href="@{/computers}">Trang chủ</a> / <span id="breadcrumb-name"
+				th:text="${computer.name}">Tên sản phẩm</span>
+		</nav>
+
+		<div class="product-layout">
+			<div class="product-image-section">
+				<div class="main-image">
+					<img id="main-product-img" th:src="${computer.imagePath}"
+						th:alt="${computer.name}">
+				</div>
+			</div>
+
+			<div class="product-info-section">
+				<p class="brand-name">
+					<span id="display-manufacture"
+						th:text="${computer.manufactureName}">BRAND</span> <select
+						id="edit-manufacture" style="display: none;"
+						class="form-control-sm">
+						<option th:each="m : ${manufactures}" th:value="${m.id}"
+							th:text="${m.name}"
+							th:selected="${m.id == computer.manufactureId}"></option>
+					</select>
+				</p>
+
+				<h1 class="product-title">
+					<span id="display-name" th:text="${computer.name}">Tên máy
+						tính</span> <input type="text" id="edit-name" th:value="${computer.name}"
+						style="display: none;" class="form-input-title">
+				</h1>
+
+				<div class="price-box">
+					<span id="display-price" class="price-value"
+						th:text="${computer.formattedPrice}">¥0</span>
+					<div id="edit-price-wrapper" style="display: none;">
+						<label style="font-size: 14px; color: #666;">Giá bán (¥):</label>
+						<input type="number" id="edit-price" th:value="${computer.price}"
+							class="form-input-price">
+					</div>
+				</div>
+
+				<div class="description-container">
+					<h3>Thông số sản phẩm:</h3>
+					<p id="display-description" class="product-description"
+						th:text="${computer.description}">Mô tả chi tiết...</p>
+					<textarea id="edit-description" style="display: none;"
+						class="form-input-textarea" rows="6"
+						th:text="${computer.description}"></textarea>
+				</div>
+
+				<div class="action-buttons">
+					<button id="btn-add-cart" class="btn-add-cart">
+						<i class="fas fa-shopping-cart"></i> THÊM VÀO GIỎ HÀNG
+					</button>
+
+					<div sec:authorize="hasRole('ADMIN')" class="admin-zone">
+						<p class="admin-label">
+							<i class="fas fa-tools"></i> Quản trị viên:
+						</p>
+
+						<div id="view-mode" class="admin-btn-group">
+							<button onclick="toggleEditMode(true)" class="btn-edit">
+								<i class="fas fa-edit"></i> CHỈNH SỬA TẠI CHỖ
+							</button>
+							<button th:onclick="'confirmDelete(' + ${computer.id} + ')'"
+								class="btn-delete">
+								<i class="fas fa-trash-alt"></i> XÓA BỎ
+							</button>
+						</div>
+						<div sec:authorize="hasRole('ADMIN')">
+							<a th:href="@{/computers/add}" class="btn-edit"> + Thêm sản
+								phẩm mới </a>
+						</div>
+
+						<div id="edit-mode" style="display: none;">
+							<div class="file-upload-wrapper">
+								<label>Thay đổi ảnh:</label> <input type="file" id="edit-image"
+									accept="image/*">
+							</div>
+							<div class="admin-btn-group" style="margin-top: 15px;">
+								<button onclick="saveChanges()" class="btn-save">
+									<i class="fas fa-check"></i> LƯU THAY ĐỔI
+								</button>
+								<button onclick="toggleEditMode(false)" class="btn-cancel">
+									HỦY</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<p style="margin-top: 16px;">
+		<a th:href="@{/home}">⬅ Back to HomePage</a>
+	</p>
+	<p style="margin-top: 16px;">
+		<a th:href="@{/computers}">⬅ Back to Computer Page</a>
+	</p>
+
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script th:src="@{/js/computers-detail.js}"></script>
+	<script th:src="@{/js/computer-add.js}"></script>
+</body>
+</html>

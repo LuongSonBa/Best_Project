@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Manufacture Detail</title>
+
+<!-- CSRF token -->
+<meta name="_csrf" th:content="${_csrf.token}" />
+<meta name="_csrf_header" th:content="${_csrf.headerName}" />
+
+<!-- CSS -->
+<link rel="stylesheet" th:href="@{/css/manufacture-detail.css}">
+</head>
+<body>
+	<div class="container">
+		<h2>Manufacture Detail</h2>
+
+		<!-- ID (readonly) -->
+		<div class="detail-item">
+			<label>ID:</label> <span id="idText" th:text="${manufacture.id}"></span>
+			<input type="hidden" id="manufactureId" th:value="${manufacture.id}">
+		</div>
+
+		<!-- Name -->
+		<div class="detail-item">
+			<label>Name:</label> <span id="nameText"
+				th:text="${manufacture.name}"></span> <input id="nameInput"
+				type="text" th:value="${manufacture.name}" required
+				style="display: none;">
+		</div>
+
+		<!-- Address -->
+		<div class="detail-item">
+			<label>Address:</label> <span id="addressText"
+				th:text="${manufacture.address}"></span> <input id="addressInput"
+				type="text" th:value="${manufacture.address}" style="display: none;">
+		</div>
+
+		<!-- Phone -->
+		<div class="detail-item">
+			<label>Phone:</label> <span id="phoneText"
+				th:text="${manufacture.phone}"></span> <input id="phoneInput"
+				type="text" th:value="${manufacture.phone}" style="display: none;">
+		</div>
+
+		<!-- Email -->
+		<div class="detail-item">
+			<label>Email:</label> <span id="emailText"
+				th:text="${manufacture.email}"></span> <input id="emailInput"
+				type="text" th:value="${manufacture.email}" style="display: none;">
+		</div>
+
+		<!-- Description -->
+		<div class="detail-item">
+			<label>Description:</label> <span id="descText"
+				th:text="${manufacture.description}"></span>
+			<textarea id="descInput" style="display: none;"
+				th:text="${manufacture.description}"></textarea>
+		</div>
+		<h3>Products of this Manufacture:</h3>
+
+		<!-- Nếu có sản phẩm -->
+		<table th:if="${manufacture.products.size() > 0}">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Price (VND)</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="product : ${manufacture.products}">
+					<td th:text="${product.id}"></td>
+					<td th:text="${product.name}"></td>
+					<td th:text="${product.price}"></td>
+					<td th:text="${product.description}"></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<!-- Nếu không có sản phẩm -->
+		<p th:unless="${manufacture.products.size() > 0}">Not available</p>
+
+
+
+		<div class="button-group">
+			<a th:href="@{/manufactures}" class="btn">Back to List</a>
+
+			<button id="editBtn" type="button" class="btn">Edit</button>
+			<button id="updateBtn" type="button" class="btn"
+				style="display: none;">Update</button>
+
+
+		</div>
+	</div>
+
+	<!-- JS -->
+	<script th:src="@{/js/manufacture-detail.js}"></script>
+</body>
+</html>

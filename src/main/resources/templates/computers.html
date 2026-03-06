@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>HP Computer List</title>
+<link rel="stylesheet" th:href="@{/css/computers.css}">
+</head>
+<body>
+    <div class="main-container">
+        <h1>Computers Page</h1>
+
+        <div class="product-grid">
+            <div th:each="comp : ${computers}" class="product-card">
+                
+                <a th:href="@{/computers/{id}(id=${comp.id})}" class="product-link">
+                    <div class="card-header">
+                        <div class="image-wrapper">
+                            <img th:src="${comp.imagePath}" alt="Computer Image">
+                        </div>
+                    </div>
+                </a>
+
+                <div class="card-content">
+                    <a th:href="@{/computers/{id}(id=${comp.id})}" class="product-name-link">
+                        <h3 class="product-name" th:text="${comp.name}">Name</h3>
+                    </a>
+                    
+                    <p class="manufacture" th:text="${comp.manufactureName}">Manufacture</p>
+
+                    <div class="price-container">
+                        <span class="current-price" th:text="${comp.formattedPrice}">¥0</span>
+                    </div>
+
+                    <p class="description" th:text="${comp.description}">Description</p>
+                </div>
+
+                <button class="btn-quick-buy">QUICK BUY</button>
+            </div>
+        </div>
+
+        <div class="pagination-bar" th:if="${totalPages > 1}">
+            <a th:href="@{/computers(page=${currentPage - 1})}"
+                th:classappend="${currentPage == 0} ? 'disabled' : ''"> 
+                <i class="fa-solid fa-chevron-left"></i> Previous
+            </a> 
+            <span class="page-numbers"> 
+                Page <strong th:text="${currentPage + 1}">1</strong> of 
+                <strong th:text="${totalPages}">5</strong>
+            </span> 
+            <a th:href="@{/computers(page=${currentPage + 1})}"
+                th:classappend="${currentPage + 1 == totalPages} ? 'disabled' : ''">
+                Next <i class="fa-solid fa-chevron-right"></i>
+            </a>
+        </div>
+        	<!-- Back home -->
+	<p style="margin-top: 16px;">
+		<a th:href="@{/home}">⬅ Back to HomePage</a>
+	</p>
+    </div>
+</body>
+</html>

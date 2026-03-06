@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Products List</title>
+<link rel="stylesheet" th:href="@{/css/products.css}">
+<meta name="_csrf" th:content="${_csrf.token}" />
+<meta name="_csrf_header" th:content="${_csrf.headerName}" />
+</head>
+<body>
+
+	<h2>Products List</h2>
+
+	<!-- Nút tạo mới luôn hiển thị -->
+	<p>
+		<a href="/products/add" id="createBtn">➕ Create New Product</a>
+	</p>
+
+	<table border="1" cellspacing="0" cellpadding="8">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Price</th>
+				<th>Action</th>
+				<th>Image</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="product : ${products}">
+				<td th:text="${product.id}"></td>
+				<td th:text="${product.name}"></td>
+				<td th:text="${product.price}"></td>
+				<td><a th:href="@{'/products/' + ${product.id}}">Detail</a>
+					<button class="deleteBtn" th:data-id="${product.id}">Delete</button>
+				</td>
+				<td><img
+					th:src="${product.imagePath != null} ? ${product.imagePath} : @{/images/default-product.png}"
+					alt="Product Image" width="100"
+					style="border-radius: 5px; object-fit: cover;" /></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<!-- Phân trang -->
+	<div style="margin-top: 16px;">
+		<a th:if="${currentPage > 0}"
+			th:href="@{/products(page=${currentPage - 1}, size=5)}">⬅
+			Previous Page</a> <span>Trang <span th:text="${currentPage + 1}"></span>
+			/ <span th:text="${totalPages}"></span></span> <a
+			th:if="${currentPage < totalPages - 1}"
+			th:href="@{/products(page=${currentPage + 1}, size=5)}">Next Page
+			➡</a>
+	</div>
+
+	<!-- Back home -->
+	<p style="margin-top: 16px;">
+		<a th:href="@{/home}">⬅ Back to HomePage</a>
+	</p>
+
+	<script th:src="@{/js/products.js}"></script>
+</body>
+</html>

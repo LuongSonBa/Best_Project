@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name="_csrf" th:content="${_csrf.token}" />
+<meta name="_csrf_header" th:content="${_csrf.headerName}" />
+<meta charset="UTF-8">
+<title>Chi tiết sản phẩm</title>
+<link rel="stylesheet" th:href="@{/css/product-detail.css}">
+</head>
+<body>
+	<h2>Chi tiết sản phẩm</h2>
+
+	<div class="product-detail">
+		<div class="product-image">
+			<img id="previewImg"
+				th:src="${product.imagePath != null} ? ${product.imagePath} : @{/images/default-product.png}"
+				alt="Product Image"
+				style="max-width: 300px; border-radius: 8px; display: block;">
+
+			<div id="imageInputSection" style="margin-top: 10px; display: none;">
+				<label for="imageInput" style="display: block; font-weight: bold;">Đổi
+					ảnh sản phẩm:</label> <input type="file" id="imageInput" accept="image/*">
+			</div>
+		</div>
+
+		<div class="product-info">
+			<input type="hidden" id="productId" th:value="${product.id}">
+			<p>
+				<strong>Tên sản phẩm:</strong> <span id="nameText"
+					th:text="${product.name}"></span> <input id="nameInput" type="text"
+					th:value="${product.name}" style="display: none;">
+			</p>
+
+			<p>
+				<strong>Giá:</strong> <span id="priceText"
+					th:text="${product.price}"></span> VND <input id="priceInput"
+					type="number" th:value="${product.price}" style="display: none;">
+			</p>
+
+			<p>
+				<strong>Mô tả:</strong> <span id="descText"
+					th:text="${product.description}"></span>
+				<textarea id="descInput" style="display: none;"
+					th:text="${product.description}"></textarea>
+			</p>
+
+			<p>
+				<strong>Nhà sản xuất:</strong> <span id="manufactureText"
+					th:text="${product.manufactureName != null ? product.manufactureName : 'No Manufacture'}"></span>
+
+				<select id="manufactureId" style="display: none;">
+					<option value="0">No Manufacture</option>
+					<th:block th:each="m : ${manufactures}">
+						<option th:selected="${product.manufactureId == m.id}"
+							th:value="${m.id}" th:text="${m.name}"></option>
+					</th:block>
+				</select>
+			</p>
+
+			<button id="editBtn">Edit</button>
+			<div id="editActions" style="display: none;">
+				<button id="updateBtn">Update</button>
+				<button id="cancelBtn" style="background-color: #ccc; color: black;">Cancel</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- Nút quay lại -->
+	<div class="back-btn">
+		<a th:href="@{/products}">⬅ Quay lại danh sách</a>
+	</div>
+
+	<!-- Import JS -->
+	<script th:src="@{/js/product-detail.js}"></script>
+</body>
+</html>

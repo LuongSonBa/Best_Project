@@ -1,0 +1,98 @@
+@charset "UTF-8";
+/* ----- RESET CƠ BẢN ----- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* ----- FORM CONTAINER ----- */
+#productForm {
+    width: 420px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* ----- LABEL ----- */
+#productForm label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+/* ----- INPUT & TEXTAREA & SELECT ----- */
+#productForm input,
+#productForm textarea,
+#productForm select {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid #d3d3d3;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+/* Hiệu ứng khi focus */
+#productForm input:focus,
+#productForm textarea:focus,
+#productForm select:focus {
+    border-color: #6a5acd;
+    box-shadow: 0 0 5px rgba(106, 90, 205, 0.4);
+    outline: none;
+}
+
+/* Textarea cao hơn */
+#productForm textarea {
+    min-height: 90px;
+}
+
+/* ----- BUTTON SAVE ----- */
+#saveBtn {
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #6a5acd, #7b68ee);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#saveBtn:hover {
+    background: linear-gradient(135deg, #7b68ee, #8a79ff);
+    transform: translateY(-2px);
+}
+
+/* ----- Mobile Support ----- */
+@media (max-width: 500px) {
+    #productForm {
+        width: 90%;
+        padding: 20px;
+    }
+}
+#backBtn {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    background: #f0f0f0;
+    color: #333;
+    transition: 0.2s;
+}
+
+#backBtn:hover {
+    background: #e0e0e0;
+    transform: translateY(-2px);
+}

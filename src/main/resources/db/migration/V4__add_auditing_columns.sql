@@ -1,0 +1,21 @@
+-- V2__add_audit_columns.sql
+ALTER TABLE product
+    ADD COLUMN created_at DATETIME NOT NULL DEFAULT NOW(),
+    ADD COLUMN modified_at DATETIME NULL,
+    ADD COLUMN created_by VARCHAR(255),
+    ADD COLUMN modified_by VARCHAR(255),
+    ADD COLUMN version BIGINT DEFAULT 0;
+
+ALTER TABLE manufacture
+    ADD COLUMN created_at TIMESTAMP NOT NULL DEFAULT NOW(),
+    ADD COLUMN modified_at TIMESTAMP NULL,
+    ADD COLUMN created_by VARCHAR(100),
+    ADD COLUMN modified_by VARCHAR(100),
+    ADD COLUMN version BIGINT DEFAULT 0;
+
+ALTER TABLE users
+    ADD COLUMN created_at TIMESTAMP NOT NULL DEFAULT NOW(),
+    ADD COLUMN modified_at TIMESTAMP NULL,
+    ADD COLUMN created_by VARCHAR(100),
+    ADD COLUMN modified_by VARCHAR(100),
+    ADD COLUMN version BIGINT DEFAULT 0;

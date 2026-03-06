@@ -1,0 +1,1 @@
+UPDATE product SET image_path = 'default.png';

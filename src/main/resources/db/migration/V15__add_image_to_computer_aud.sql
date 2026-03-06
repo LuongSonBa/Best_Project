@@ -1,0 +1,2 @@
+ALTER TABLE computer_aud
+ADD COLUMN image LONGBLOB;
