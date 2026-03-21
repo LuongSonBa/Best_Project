@@ -172,3 +172,41 @@ body {
     padding: 10px 20px;
     border-radius: 8px;
 }
+/* ===== SEARCH BAR ===== */
+.search-bar {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.search-bar input {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    min-width: 150px;
+}
+
+.search-bar input:focus {
+    border-color: #007bff;
+}
+
+.search-bar button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.search-bar button:hover {
+    background-color: #0056b3;
+}

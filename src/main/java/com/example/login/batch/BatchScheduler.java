@@ -16,7 +16,7 @@ public class BatchScheduler {
         this.expireJob = expireJob;
     }
 
-    @Scheduled(fixedRate = 60000) // mỗi 1 phút
+    @Scheduled(fixedRate = 60000) 
     public void runJob() throws Exception {
 
         JobParameters params = new JobParametersBuilder()
