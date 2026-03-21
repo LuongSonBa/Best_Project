@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 
 import org.hibernate.envers.Audited;
 
+import ch.qos.logback.core.status.Status;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -25,12 +26,14 @@ public class Computer extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private BigDecimal price;
-    private String name;
-    private String description;
-
-    @Lob
+	private BigDecimal price;
+	private String name;
+	public Status getStatus() {
+		return status;
+	}
+	private String description;
+	private LocalDateTime ExpiredDate;
+	@Lob
     @Column(name = "image", columnDefinition = "LONGBLOB")
     private byte[] image;
 
@@ -45,70 +48,49 @@ public class Computer extends BaseEntity {
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private Status status;
-
-    // ===== getter/setter =====
-
-    public Long getId() {
-        return id;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public byte[] getImage() {
-        return image;
-    }
-
-    public Manufacture getManufacture() {
-        return manufacture;
-    }
-
-    public LocalDateTime getExpiredDate() {
-        return expiredDate;
-    }
-
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public void setImage(byte[] image) {
-        this.image = image;
-    }
-
-    public void setManufacture(Manufacture manufacture) {
-        this.manufacture = manufacture;
-    }
-
-    public void setExpiredDate(LocalDateTime expiredDate) {
-        this.expiredDate = expiredDate;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
-    }
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public BigDecimal getPrice() {
+		return price;
+	}
+	public void setPrice(BigDecimal price) {
+		this.price = price;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public byte[] getImage() {
+		return image;
+	}
+	public void setImage(byte[] image) {
+		this.image = image;
+	}
+	public Manufacture getManufacture() {
+		return manufacture;
+	}
+	public void setManufacture(Manufacture manufacture) {
+		this.manufacture = manufacture;
+	}
+	public void setStatus(Status status) {
+		this.status = status;
+	}
+	public LocalDateTime getExpiredDate() {
+		return ExpiredDate;
+	}
+	public void setExpiredDate(LocalDateTime expiredDate) {
+		ExpiredDate = expiredDate;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
 }
