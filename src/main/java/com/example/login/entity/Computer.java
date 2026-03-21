@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 
 import org.hibernate.envers.Audited;
 
+import ch.qos.logback.core.status.Status;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
