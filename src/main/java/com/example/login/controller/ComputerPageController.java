@@ -27,15 +27,28 @@ public class ComputerPageController {
     }
 
     @GetMapping("/computers")
-    public String showComputers(Model model, 
-                                @RequestParam(defaultValue = "0") int page,
-                                @RequestParam(defaultValue = "4") int size) { 
-        log.info("Request list computers page={}, size={}", page, size);
-        
-        Page<ComputerResponseDto> computerPage = computerService.getComputersPage(PageRequest.of(page, size));
+    public String showComputers(
+            Model model,
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false) String manufactureName,
+            @RequestParam(required = false) Double maxPrice,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "5") int size
+    ) {
+
+        log.info("Search computers name={}, manufacture={}, maxPrice={}, page={}",
+                name, manufactureName, maxPrice, page);
+
+        Page<ComputerResponseDto> computerPage =
+                computerService.search(
+                        name,
+                        manufactureName,
+                        maxPrice,
+                        PageRequest.of(page, size)
+                );
 
         model.addAttribute("computers", computerPage.getContent());
-        model.addAttribute("currentPage", page);
+        model.addAttribute("currentPage", computerPage.getNumber());
         model.addAttribute("totalPages", computerPage.getTotalPages());
 
         return "computers";

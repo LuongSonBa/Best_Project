@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -17,6 +18,8 @@ import com.example.login.exception.NotFoundException;
 import com.example.login.mapper.ComputerMapper;
 import com.example.login.repository.ComputerRepository;
 import com.example.login.repository.ManufactureRepository;
+import com.example.login.spec.ComputerSpecification;
+
 
 import jakarta.transaction.Transactional;
 @Service
@@ -34,10 +37,29 @@ public class ComputerService {
         this.manufactureRepository = manufactureRepository;
         this.computerMapper = computerMapper;
     }
+    public Page<ComputerResponseDto> search(
+            String name,
+            String manufactureName,
+            Double maxPrice,
+            Pageable pageable
+    ) {
 
-    public Page<ComputerResponseDto> getComputersPage(Pageable pageable) {
-        log.info("Load computers page={}, size={}", pageable.getPageNumber(), pageable.getPageSize());
-        return computerRepository.findAll(pageable).map(computerMapper::toDto);
+        Specification<Computer> spec = org.springframework.data.jpa.domain.Specification.where(null);
+
+        if (name != null && !name.isBlank()) {
+            spec = spec.and(ComputerSpecification.hasName(name));
+        }
+
+        if (manufactureName != null && !manufactureName.isBlank()) {
+            spec = spec.and(ComputerSpecification.hasManufactureName(manufactureName));
+        }
+
+        if (maxPrice != null) {
+            spec = spec.and(ComputerSpecification.hasMaxPrice(maxPrice));
+        }
+
+        return computerRepository.findAll(spec, pageable)
+        		.map(computerMapper::toDto);
     }
 
     public ComputerResponseDto getComputerById(Long id) {
@@ -91,4 +113,5 @@ public class ComputerService {
         }
         computerRepository.deleteById(id);
     }
+    
 }
