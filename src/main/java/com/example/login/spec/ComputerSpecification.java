@@ -20,7 +20,7 @@ public class ComputerSpecification {
 
     public static Specification<Computer> hasManufactureName(String manufactureName) {
         return (root, query, cb) -> {
-            query.distinct(true); // 🔥 important
+            query.distinct(true);
             Join<Object, Object> manu = root.join("manufacture");
             return cb.like(manu.get("name"), "%" + manufactureName + "%");
         };
