@@ -24,7 +24,6 @@ import jakarta.persistence.EntityManagerFactory;
 @EnableBatchProcessing
 public class BatchConfig {
 
-    // 🔹 1. Reader
     @Bean
     public JpaPagingItemReader<Computer> reader(EntityManagerFactory emf) {
 
@@ -40,7 +39,6 @@ public class BatchConfig {
         return reader;
     }
 
-    // 🔹 2. Processor
     @Bean
     public ItemProcessor<Computer, Computer> processor() {
         return computer -> {
@@ -56,7 +54,6 @@ public class BatchConfig {
         };
     }
 
-    // 3. Writer
     @Bean(name = "batchWriter")
     public JpaItemWriter<Computer> writer(EntityManagerFactory emf) {
 
@@ -66,7 +63,6 @@ public class BatchConfig {
         return writer;
     }
 
-    // 🔹 4. Step
     @Bean
     public Step expireStep(JobRepository jobRepository,
                            PlatformTransactionManager transactionManager,
@@ -82,7 +78,6 @@ public class BatchConfig {
                 .build();
     }
 
-    // 🔹 5. Job
     @Bean
     public Job expireJob(JobRepository jobRepository, Step expireStep) {
 
