@@ -23,7 +23,7 @@ import jakarta.persistence.EntityManagerFactory;
 @Configuration
 @EnableBatchProcessing
 public class BatchConfig {
-
+// abc
     @Bean
     public JpaPagingItemReader<Computer> reader(EntityManagerFactory emf) {
 
