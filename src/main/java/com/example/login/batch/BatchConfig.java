@@ -24,6 +24,7 @@ import jakarta.persistence.EntityManagerFactory;
 @EnableBatchProcessing
 public class BatchConfig {
 // abc
+	//cd
     @Bean
     public JpaPagingItemReader<Computer> reader(EntityManagerFactory emf) {
 
