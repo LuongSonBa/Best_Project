@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 //abccc
 @Component
 public class BatchScheduler {
-//add plus
     private final JobLauncher jobLauncher;
     private final Job expireJob;
 

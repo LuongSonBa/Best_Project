@@ -16,7 +16,13 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-
+/* thay đổi quick buy thành add cart  - đẩy vào giỏi hàng 	-- thêm giỏi hàng ở main page ở tùy chọn -- khi bấm vào thì vào list product order - 
+ * add tick nhiều sp - cuối cùng có total giá - thực hiện đặt đơn thì đổi trạng thái - đang chờ xác nhận - (đặt xong thì )
+ *  user-cart : onetomany -
+ *  - khi đặt xong thì muốn xác nhận xem đơn hàng đã đặt chưa thì vào table cart tìm đơn hàng thằng user ...
+ * .. 1 món 1 shipper - card cartitem order - order history 
+ * 
+*/
 @Entity
 @Audited
 @Table(name = "computer")
@@ -28,6 +34,7 @@ public class Computer extends BaseEntity {
 
     private BigDecimal price;
     private String name;
+    // 
     private String description;
 
     @Lob

@@ -1,6 +1,7 @@
 package com.example.login.service;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,7 +41,7 @@ public class ComputerService {
     public Page<ComputerResponseDto> search(
             String name,
             String manufactureName,
-            Double maxPrice,
+            BigDecimal maxPrice,
             Pageable pageable
     ) {
 

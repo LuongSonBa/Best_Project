@@ -1,5 +1,7 @@
 package com.example.login.controller;
 
+import java.math.BigDecimal;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -31,7 +33,7 @@ public class ComputerPageController {
             Model model,
             @RequestParam(required = false) String name,
             @RequestParam(required = false) String manufactureName,
-            @RequestParam(required = false) Double maxPrice,
+            @RequestParam(required = false) BigDecimal maxPrice,
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "5") int size
     ) {
