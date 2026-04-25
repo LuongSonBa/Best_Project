@@ -48,6 +48,9 @@ public class CartItem {
 	public void setIsSelected(Boolean isSelected) {
 		this.isSelected = isSelected;
 	}
+	public Long getId() {
+		return id;
+	}
     
 
 }
