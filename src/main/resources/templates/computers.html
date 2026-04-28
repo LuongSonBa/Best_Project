@@ -1,41 +1,35 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<title>Computer List</title>
-<link rel="stylesheet" th:href="@{/css/computers.css}">
+    <meta charset="UTF-8">
+    <title>Computer List</title>
+    <link rel="stylesheet" th:href="@{/css/computers.css}">
 </head>
 <body>
 
 <div class="main-container">
 
-    <h1>Computers Page</h1>
+    <div class="header-section">
+        <h1>Computers Page</h1>
+        <div class="cart-wrapper">
+            <a th:href="@{/cart}" class="cart-link">
+                <span class="cart-icon">🛒</span>
+                <span id="cart-badge" class="cart-badge" th:text="${totalItemsInCart != null ? totalItemsInCart : 0}">0</span>
+            </a>
+        </div>
+    </div>
 
-    <!-- ===== SEARCH BAR ===== -->
     <div class="search-bar">
         <form th:action="@{/computers}" method="get">
-
-            <input type="text" name="name"
-                   placeholder="Search by name..."
-                   th:value="${param.name}" />
-
-            <input type="text" name="manufactureName"
-                   placeholder="Manufacture..."
-                   th:value="${param.manufactureName}" />
-
-            <input type="number" name="maxPrice"
-                   placeholder="Max price..."
-                   th:value="${param.maxPrice}" />
-
+            <input type="text" name="name" placeholder="Search by name..." th:value="${param.name}" />
+            <input type="text" name="manufactureName" placeholder="Manufacture..." th:value="${param.manufactureName}" />
+            <input type="number" name="maxPrice" placeholder="Max price..." th:value="${param.maxPrice}" />
             <button type="submit">Search</button>
         </form>
     </div>
 
-
-    <!-- ===== PRODUCT GRID ===== -->
     <div class="product-grid">
         <div th:each="comp : ${computers}" class="product-card">
-
             <a th:href="@{/computers/{id}(id=${comp.id})}" class="product-link">
                 <div class="card-header">
                     <div class="image-wrapper">
@@ -48,71 +42,28 @@
                 <a th:href="@{/computers/{id}(id=${comp.id})}" class="product-name-link">
                     <h3 class="product-name" th:text="${comp.name}">Name</h3>
                 </a>
-
                 <p class="manufacture" th:text="${comp.manufactureName}">Manufacture</p>
-
                 <div class="price-container">
                     <span class="current-price" th:text="${comp.formattedPrice}">¥0</span>
                 </div>
-
                 <p class="description" th:text="${comp.description}">Description</p>
             </div>
 
-            <button class="btn-quick-buy">ADD CART</button>
+            <button class="btn-quick-buy" th:onclick="|addToCart(${comp.id})|">ADD CART</button>
         </div>
     </div>
 
-
-    <!-- ===== PAGINATION ===== -->
     <div class="pagination-bar" th:if="${totalPages > 1}">
-
-        <!-- Previous -->
-        <a th:if="${currentPage > 0}"
-           th:href="@{/computers(
-                page=${currentPage - 1},
-                name=${param.name},
-                manufactureName=${param.manufactureName},
-                maxPrice=${param.maxPrice}
-           )}">
-            ← Previous
-        </a>
-
-        <span th:if="${currentPage == 0}" class="disabled">
-            ← Previous
-        </span>
-
-
-        <!-- Page info -->
-        <span class="page-numbers">
-            Page <strong th:text="${currentPage + 1}">1</strong> of
-            <strong th:text="${totalPages}">5</strong>
-        </span>
-
-
-        <!-- Next -->
-        <a th:if="${currentPage + 1 < totalPages}"
-           th:href="@{/computers(
-                page=${currentPage + 1},
-                name=${param.name},
-                manufactureName=${param.manufactureName},
-                maxPrice=${param.maxPrice}
-           )}">
-            Next →
-        </a>
-
-        <span th:if="${currentPage + 1 == totalPages}" class="disabled">
-            Next →
-        </span>
-
+        <a th:if="${currentPage > 0}" th:href="@{/computers(page=${currentPage - 1}, name=${param.name})}">← Previous</a>
+        <span class="page-numbers">Page <strong th:text="${currentPage + 1}"></strong> of <strong th:text="${totalPages}"></strong></span>
+        <a th:if="${currentPage + 1 < totalPages}" th:href="@{/computers(page=${currentPage + 1}, name=${param.name})}">Next →</a>
     </div>
 
-
-    <!-- Back home -->
     <p style="margin-top: 16px;">
         <a th:href="@{/home}">⬅ Back to HomePage</a>
     </p>
-
 </div>
 
+<script th:src="@{/js/cart.js}"></script>
 </body>
 </html>
