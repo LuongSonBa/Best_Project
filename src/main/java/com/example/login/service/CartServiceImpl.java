@@ -91,4 +91,30 @@ public class CartServiceImpl implements CartService {
 
 		return cartRepository.save(cart);
 	}
+	@Override
+	@Transactional
+	public CartResponseDto updateFullCart(Long userId, List<CartItemRequestDto> requests) {
+	    Cart cart = cartRepository.findByUserId(userId)
+	            .orElseThrow(() -> new NotFoundException("Cart not found"));
+
+	    for (CartItemRequestDto req : requests) {
+	        CartItem item = cartItemRepository.findById(req.getCartItemId())
+	                .orElseThrow(() -> new NotFoundException("Item not found: " + req.getCartItemId()));
+
+	        // Bảo mật: Chỉ cho phép sửa nếu item thuộc về đúng giỏ hàng của User
+	        if (item.getCart().getId().equals(cart.getId())) {
+	            item.setQuantity(req.getQuantity());
+	            item.setIsSelected(req.getIsSelected());
+	            cartItemRepository.save(item);
+	        }
+	    }
+	    // Gọi lại hàm lấy giỏ hàng để Mapper tính toán lại TotalPrice
+	    return getCartByUserId(userId);
+	}
+
+	@Override
+	@Transactional
+	public void deleteItem(Long itemId) {
+	    cartItemRepository.deleteById(itemId);
+	}
 }

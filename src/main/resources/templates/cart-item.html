@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Computer Shop</title>
+    <link rel="stylesheet" th:href="@{/css/cart.css}">
+</head>
+<body>
+
+<div class="cart-page-wrapper">
+    <div class="container">
+        <header class="cart-header">
+            <h1>Your Shopping Cart</h1>
+            <a th:href="@{/computers}" class="continue-shopping">← Continue Shopping</a>
+        </header>
+
+        <div class="cart-content">
+            <div class="cart-table-container">
+                <table class="cart-table">
+                    <thead>
+                        <tr>
+                            <th>Select</th>
+                            <th>Product Details</th>
+                            <th>Unit Price</th>
+                            <th>Quantity</th>
+                            <th>Subtotal</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="item : ${cart.items}" th:id="'cart-item-' + ${item.cartItemId}">
+                            <td>
+                                <input type="checkbox" class="item-checkbox" 
+                                       th:checked="${item.isSelected}" 
+                                       th:onchange="'toggleSelection(' + ${item.cartItemId} + ')'">
+                            </td>
+                            <td>
+                                <div class="product-info">
+                                    <img th:src="${item.productImage}" alt="Product Image">
+                                    <div class="product-details">
+                                        <span class="product-name" th:text="${item.productName}">Product Name</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td th:text="${item.price} + ' ¥'"></td>
+                            <td>
+                                <div class="quantity-box">
+                                    <button th:onclick="'updateQuantity(' + ${item.cartItemId} + ', -1)'">−</button>
+                                    <input type="text" class="quantity-input" th:value="${item.quantity}" readonly>
+                                    <button th:onclick="'updateQuantity(' + ${item.cartItemId} + ', 1)'">+</button>
+                                </div>
+                            </td>
+                            <td class="subtotal-cell" th:text="${item.subtotal} + ' ¥'"></td>
+                            <td>
+                                <button class="delete-btn" th:onclick="'deleteItem(' + ${item.cartItemId} + ')'" title="Remove Item">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="3 6 5 6 21 6"></polyline>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                        <line x1="10" y1="11" x2="10" y2="17"></line>
+                                        <line x1="14" y1="11" x2="14" y2="17"></line>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <aside class="cart-summary">
+                <div class="summary-card">
+                    <h3>Order Summary</h3>
+                    <div class="summary-details">
+                        <div class="summary-line">
+                            <span>Total Amount:</span>
+                            <span id="total-price" th:text="${cart.totalPrice} + ' ¥'">0 ¥</span>
+                        </div>
+                        <p class="summary-note">* Taxes and shipping calculated at checkout.</p>
+                        <button class="btn-checkout" onclick="checkout()">PROCEED TO CHECKOUT</button>
+                        <button class="btn-create-order" onclick="createOrder()">CREATE ORDER</button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</div>
+
+<script th:src="@{/js/cart-item.js}"></script>
+</body>
+</html>
