@@ -19,22 +19,23 @@ public class CartItem {
     private Cart cart;
 
     @ManyToOne
-    @JoinColumn(name = "product_id")
-    private Product product; // Liên kết sang Product để lấy tên/giá hiện tại
+    @JoinColumn(name = "computer_id") // Cập nhật lại tên cột mapping
+    private Computer computer;
+	private Integer quantity;
+    private Boolean isSelected;	
 
-    private Integer quantity;
-    private Boolean isSelected;
+    public Computer getComputer() {
+		return computer;
+	}
+	public void setComputer(Computer computer) {
+		this.computer = computer;
+	}
+
 	public Cart getCart() {
 		return cart;
 	}
 	public void setCart(Cart cart) {
 		this.cart = cart;
-	}
-	public Product getProduct() {
-		return product;
-	}
-	public void setProduct(Product product) {
-		this.product = product;
 	}
 	public Integer getQuantity() {
 		return quantity;

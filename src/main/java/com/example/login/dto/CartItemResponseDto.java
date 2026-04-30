@@ -5,78 +5,38 @@ import java.math.BigDecimal;
 public class CartItemResponseDto {
 
     private Long cartItemId;
-    private Long productId;
-    private String productName;
-    private String productImage; // 1. Bổ sung để hiện ảnh
+    private Long computerId;   
+    private String computerName;
+    private String computerImage; 
     private Integer quantity;
     private BigDecimal price;
     private Boolean isSelected;
-    private BigDecimal subtotal; // 2. Đổi tên từ totalPrice thành subtotal cho đúng nghĩa "Thành tiền"
+    private BigDecimal subtotal; 
 
     // --- GETTER & SETTER ---
 
-    public Long getCartItemId() {
-        return cartItemId;
-    }
+    public Long getCartItemId() { return cartItemId; }
+    public void setCartItemId(Long cartItemId) { this.cartItemId = cartItemId; }
 
-    public void setCartItemId(Long cartItemId) {
-        this.cartItemId = cartItemId;
-    }
+    public Long getComputerId() { return computerId; }
+    public void setComputerId(Long computerId) { this.computerId = computerId; }
 
-    public Long getProductId() {
-        return productId;
-    }
+    public String getComputerName() { return computerName; }
+    public void setComputerName(String computerName) { this.computerName = computerName; }
 
-    public void setProductId(Long productId) {
-        this.productId = productId;
-    }
+    // SỬA LẠI ĐOẠN NÀY
+    public String getComputerImage() { return computerImage; }
+    public void setComputerImage(String computerImage) { this.computerImage = computerImage; }
 
-    public String getProductName() {
-        return productName;
-    }
+    public Integer getQuantity() { return quantity; }
+    public void setQuantity(Integer quantity) { this.quantity = quantity; }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
+    public BigDecimal getPrice() { return price; }
+    public void setPrice(BigDecimal price) { this.price = price; }
 
-    public String getProductImage() {
-        return productImage;
-    }
+    public Boolean getIsSelected() { return isSelected; }
+    public void setIsSelected(Boolean isSelected) { this.isSelected = isSelected; }
 
-    public void setProductImage(String productImage) {
-        this.productImage = productImage;
-    }
-
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
-
-    public Boolean getIsSelected() {
-        return isSelected;
-    }
-
-    public void setIsSelected(Boolean isSelected) {
-        this.isSelected = isSelected;
-    }
-
-    // 3. Quan trọng: Hàm Getter này sẽ giúp Mapper hết lỗi đỏ!
-    public BigDecimal getSubtotal() {
-        return subtotal;
-    }
-
-    public void setSubtotal(BigDecimal subtotal) {
-        this.subtotal = subtotal;
-    }
+    public BigDecimal getSubtotal() { return subtotal; }
+    public void setSubtotal(BigDecimal subtotal) { this.subtotal = subtotal; }
 }

@@ -16,12 +16,13 @@ public class CartItemMapper {
 		CartItemResponseDto dto = new CartItemResponseDto();
 
 		dto.setCartItemId(cartItem.getId());
-		dto.setProductName(cartItem.getProduct().getName());
+		dto.setComputerName(cartItem.getComputer().getName());
+		dto.setComputerId(cartItem.getComputer().getId());
 		dto.setQuantity(cartItem.getQuantity());
-		dto.setPrice(cartItem.getProduct().getPrice());
+		dto.setPrice(cartItem.getComputer().getPrice());
 		dto.setIsSelected(cartItem.getIsSelected());
 
-		BigDecimal subtotal = cartItem.getProduct().getPrice()
+		BigDecimal subtotal = cartItem.getComputer().getPrice()
 								.multiply(BigDecimal.valueOf(cartItem.getQuantity()));
 
 		dto.setSubtotal(subtotal);
