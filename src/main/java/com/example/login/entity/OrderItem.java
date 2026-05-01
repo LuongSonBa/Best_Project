@@ -1,7 +1,6 @@
 package com.example.login.entity;
 
 import java.math.BigDecimal;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,42 +12,68 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "order_items")
 public class OrderItem {
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    // Liên kết ngược về Order cha
     @ManyToOne
-    @JoinColumn(name = "order_id")
-    private Order order; // KHÓA NGOẠI: Để biết item này thuộc đơn hàng nào
+    @JoinColumn(name = "order_id", nullable = false)
+    private Order order;
 
+    // Liên kết tới sản phẩm (máy tính)
     @ManyToOne
-    @JoinColumn(name = "product_id")
-    private Product product; // KHÓA NGOẠI: Để biết là sản phẩm nào
+    @JoinColumn(name = "computer_id", nullable = false)
+    private Computer computer;
 
     private Integer quantity;
-    private BigDecimal priceAtPurchase; // CỰC QUAN TRỌNG: Lưu giá lúc mua
+
+    // Giá quan trọng nhất: Lưu lại giá tại thời điểm bấm nút mua
+    private BigDecimal priceAtPurchase;
+
+    // --- Constructors ---
+    public OrderItem() {}
+
+    // --- Getters and Setters ---
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public Order getOrder() {
-		return order;
-	}
-	public void setOrder(Order order) {
-		this.order = order;
-	}
-	public Product getProduct() {
-		return product;
-	}
-	public void setProduct(Product product) {
-		this.product = product;
-	}
-	public Integer getQuantity() {
-		return quantity;
-	}
-	public void setQuantity(Integer quantity) {
-		this.quantity = quantity;
-	}
-	public BigDecimal getPriceAtPurchase() {
-		return priceAtPurchase;
-	}
-	public void setPriceAtPurchase(BigDecimal priceAtPurchase) {
-		this.priceAtPurchase = priceAtPurchase;
-	}
-	
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
+    }
+
+    public Computer getComputer() {
+        return computer;
+    }
+
+    public void setComputer(Computer computer) {
+        this.computer = computer;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
+    public BigDecimal getPriceAtPurchase() {
+        return priceAtPurchase;
+    }
+
+    public void setPriceAtPurchase(BigDecimal priceAtPurchase) {
+        this.priceAtPurchase = priceAtPurchase;
+    }
 }

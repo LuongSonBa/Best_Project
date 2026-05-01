@@ -1,5 +1,6 @@
 package com.example.login.controller;
 
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
@@ -31,21 +32,24 @@ public class CartItemController {
 
     @PostMapping("/add")
     public ResponseEntity<CartItemResponseDto> addToCart(
-            @RequestParam Long userId,
-            @RequestBody CartItemRequestDto request
+            @RequestBody CartItemRequestDto request,
+            Principal principal
     ) {
+    	String username = principal.getName();
         return ResponseEntity.ok(
-                cartService.addToCart(userId, request)
+                cartService.addToCart(username, request)
         );
     }
     @PutMapping("/update-all")
-    public ResponseEntity<CartResponseDto> updateAll(@RequestParam Long userId, @RequestBody List<CartItemRequestDto> requests) {
-        return ResponseEntity.ok(cartService.updateFullCart(userId, requests));
+    public ResponseEntity<CartResponseDto> updateAll(Principal principal, @RequestBody List<CartItemRequestDto> requests) {
+    	String username = principal.getName();
+        return ResponseEntity.ok(cartService.updateFullCart(username, requests));
     }
 
     @DeleteMapping("/delete/{itemId}")
-    public ResponseEntity<Void> deleteItem(@PathVariable Long itemId) {
-        cartService.deleteItem(itemId);
+    public ResponseEntity<Void> deleteItem(@PathVariable Long itemId,Principal principal) {
+    	String username = principal.getName();
+        cartService.deleteItem(username,itemId);
         return ResponseEntity.ok().build();
     }
 }

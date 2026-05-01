@@ -52,6 +52,9 @@ public class Computer extends BaseEntity {
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private Status status;
+    
+    @Column(name = "stock_quantity")
+    private Integer stockQuantity; // Số lượng tồn kho
 
     // ===== getter/setter =====
 

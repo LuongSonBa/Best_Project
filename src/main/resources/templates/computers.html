@@ -4,6 +4,48 @@
     <meta charset="UTF-8">
     <title>Computer List</title>
     <link rel="stylesheet" th:href="@{/css/computers.css}">
+    <style>
+        /* CSS bổ trợ cho trạng thái hết hàng */
+        .sold-out-wrapper {
+            position: relative;
+        }
+
+        /* Làm mờ và đổi màu ảnh khi hết hàng */
+        .sold-out-overlay {
+            filter: grayscale(100%);
+            opacity: 0.5;
+            transition: 0.3s;
+        }
+
+        /* Nhãn SOLD OUT nổi lên trên ảnh */
+        .sold-out-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #dc3545;
+            color: white;
+            padding: 5px 10px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 4px;
+            z-index: 10;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        /* Style cho nút khi bị vô hiệu hóa */
+        .btn-sold-out {
+            background-color: #6c757d !important;
+            border-color: #6c757d !important;
+            color: #ffffff !important;
+            cursor: not-allowed !important;
+        }
+
+        .stock-info {
+            font-size: 0.9em;
+            margin: 5px 0;
+            color: #555;
+        }
+    </style>
 </head>
 <body>
 
@@ -30,26 +72,50 @@
 
     <div class="product-grid">
         <div th:each="comp : ${computers}" class="product-card">
-            <a th:href="@{/computers/{id}(id=${comp.id})}" class="product-link">
-                <div class="card-header">
-                    <div class="image-wrapper">
-                        <img th:src="${comp.imagePath}" alt="Computer Image">
-                    </div>
-                </div>
-            </a>
+            <div th:class="${comp.stockQuantity <= 0} ? 'sold-out-wrapper' : ''">
+                
+                <span th:if="${comp.stockQuantity <= 0}" class="sold-out-badge">SOLD OUT</span>
 
-            <div class="card-content">
-                <a th:href="@{/computers/{id}(id=${comp.id})}" class="product-name-link">
-                    <h3 class="product-name" th:text="${comp.name}">Name</h3>
+                <a th:href="@{/computers/{id}(id=${comp.id})}" class="product-link">
+                    <div class="card-header">
+                        <div class="image-wrapper">
+                            <img th:src="${comp.imagePath}" 
+                                 th:classappend="${comp.stockQuantity <= 0} ? 'sold-out-overlay' : ''"
+                                 alt="Computer Image">
+                        </div>
+                    </div>
                 </a>
-                <p class="manufacture" th:text="${comp.manufactureName}">Manufacture</p>
-                <div class="price-container">
-                    <span class="current-price" th:text="${comp.formattedPrice}">¥0</span>
+
+                <div class="card-content">
+                    <a th:href="@{/computers/{id}(id=${comp.id})}" class="product-name-link">
+                        <h3 class="product-name" th:text="${comp.name}">Name</h3>
+                    </a>
+                    <p class="manufacture" th:text="${comp.manufactureName}">Manufacture</p>
+                    
+                    <div class="price-container">
+                        <span class="current-price" th:text="${comp.formattedPrice}">¥0</span>
+                    </div>
+                    
+                    <p class="stock-info">
+                        Kho: <span th:text="${comp.stockQuantity > 0 ? comp.stockQuantity : 'Hết hàng'}" 
+                                   th:style="${comp.stockQuantity <= 0 ? 'color: red; font-weight: bold;' : ''}"></span>
+                    </p>
+
+                    <p class="description" th:text="${comp.description}">Description</p>
                 </div>
-                <p class="description" th:text="${comp.description}">Description</p>
             </div>
 
-            <button class="btn-quick-buy" th:onclick="|addToCart(${comp.id})|">ADD CART</button>
+            <button th:if="${comp.stockQuantity > 0}" 
+                    class="btn-quick-buy" 
+                    th:onclick="|addToCart(${comp.id})|">
+                ADD CART
+            </button>
+            
+            <button th:unless="${comp.stockQuantity > 0}" 
+                    class="btn-quick-buy btn-sold-out" 
+                    disabled>
+                SOLD OUT
+            </button>
         </div>
     </div>
 

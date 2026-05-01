@@ -1,0 +1,1 @@
+ALTER TABLE computer ADD COLUMN stock_quantity INT DEFAULT 0;

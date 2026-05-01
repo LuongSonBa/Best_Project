@@ -8,13 +8,13 @@ import com.example.login.dto.CartResponseDto;
 
 public interface CartService {
 	CartItemResponseDto addToCart (
-		Long userId,
+		String username,
 		CartItemRequestDto request
 		);
-	CartResponseDto getCartByUserId(Long userId);
+	CartResponseDto getCartByUsername(String username);
 	
-	CartResponseDto updateFullCart(Long userId, List<CartItemRequestDto> requests);
+	CartResponseDto updateFullCart(String username, List<CartItemRequestDto> requests);
 	
-	public void deleteItem(Long itemId);
+	public void deleteItem(String username, Long itemId);
 	}
 	
