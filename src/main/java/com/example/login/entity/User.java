@@ -21,8 +21,28 @@ public class User extends BaseEntity {
     @Column(nullable = false) 
     private String password;
     
-    @Column(nullable = false) 
+    public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+
+	public String getAddress() {
+		return address;
+	}
+
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	@Column(nullable = false) 
     private String role = "ROLE_USER";
+    private String phoneNumber; // Thêm mới
+    private String address;
 
 
     public User() {}

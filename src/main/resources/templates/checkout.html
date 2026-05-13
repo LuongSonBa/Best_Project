@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Secure Payment</title>
+    <link rel="stylesheet" th:href="@{/css/checkout.css}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CHECKOUT</h1>
+        </header>
+
+        <div class="checkout-layout">
+            <div class="checkout-form">
+                <h3><span class="icon">🚚</span> Shipping Information</h3>
+                <form id="orderForm">
+                    <div class="form-group">
+                        <label for="phoneNumber">Phone Number</label>
+                        <input type="tel" id="phoneNumber" 
+                               th:value="${user.phoneNumber}" 
+                               placeholder="e.g. 0987654321" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="shippingAddress">Shipping Address</label>
+                        <textarea id="shippingAddress" rows="4" 
+                                  placeholder="Street address, P.O. box, city..." 
+                                  th:text="${user.address}" required></textarea>
+                    </div>
+                    
+                    <div class="payment-methods">
+                        <h4>Payment Method</h4>
+                        <div class="radio-group">
+                            <input type="radio" id="cod" name="payment" value="COD" checked>
+                            <label for="cod">Cash on Delivery (COD)</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="order-summary">
+                <h3>Order Summary</h3>
+                <div id="checkoutItems" class="items-list">
+                    </div>
+                
+                <div class="summary-details">
+                    <div class="row">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">0 ¥</span>
+                    </div>
+                    <div class="row">
+                        <span>Shipping:</span>
+                        <span class="free-text">FREE</span>
+                    </div>
+                    <hr>
+                    <div class="row total">
+                        <span>TOTAL:</span>
+                        <span id="finalTotal">0 ¥</span>
+                    </div>
+                </div>
+
+                <button class="btn-place-order" onclick="placeOrder()">
+                    PLACE ORDER
+                </button>
+                <a th:href="@{/cart}" class="back-link">← Back to Shopping Cart</a>
+            </div>
+        </div>
+    </div>
+
+    <script th:src="@{/js/checkout.js}"></script>
+</body>
+</html>

@@ -11,6 +11,14 @@ public class ComputerResponseDto {
     private String imagePath; 
     private Long manufactureId;
     private String manufactureName;
+ // BỔ SUNG DÒNG NÀY
+    private Integer stockQuantity;
+	public Integer getStockQuantity() {
+		return stockQuantity;
+	}
+	public void setStockQuantity(Integer stockQuantity) {
+		this.stockQuantity = stockQuantity;
+	}
 	public Long getId() {
 		return id;
 	}

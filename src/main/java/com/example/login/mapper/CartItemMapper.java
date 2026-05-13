@@ -12,44 +12,54 @@ import com.example.login.entity.CartItem;
 
 @Component
 public class CartItemMapper {
-	public CartItemResponseDto toResponseDto(CartItem cartItem) {
-		CartItemResponseDto dto = new CartItemResponseDto();
 
-		dto.setCartItemId(cartItem.getId());
-		dto.setComputerName(cartItem.getComputer().getName());
-		dto.setComputerId(cartItem.getComputer().getId());
-		dto.setQuantity(cartItem.getQuantity());
-		dto.setPrice(cartItem.getComputer().getPrice());
-		dto.setIsSelected(cartItem.getIsSelected());
+    // Hàm 1: Map từng món lẻ (Giữ nguyên)
+    public CartItemResponseDto toResponseDto(CartItem cartItem) {
+        if (cartItem == null) return null;
+        CartItemResponseDto dto = new CartItemResponseDto();
 
-		BigDecimal subtotal = cartItem.getComputer().getPrice()
-								.multiply(BigDecimal.valueOf(cartItem.getQuantity()));
+        dto.setCartItemId(cartItem.getId());
+        dto.setComputerName(cartItem.getComputer().getName());
+        dto.setComputerId(cartItem.getComputer().getId());
+        dto.setQuantity(cartItem.getQuantity());
+        dto.setPrice(cartItem.getComputer().getPrice());
+        dto.setIsSelected(cartItem.getIsSelected());
 
-		dto.setSubtotal(subtotal);
+        if (cartItem.getComputer().getPrice() != null && cartItem.getQuantity() != null) {
+            BigDecimal subtotal = cartItem.getComputer().getPrice()
+                    .multiply(BigDecimal.valueOf(cartItem.getQuantity()));
+            dto.setSubtotal(subtotal);
+        }
 
-		return dto;
+        return dto;
     }
-	// --- HÀM 2: Phục vụ Trang Cart Page (Viết thêm mới hoàn toàn) ---
-    // Hàm này sẽ gom toàn bộ danh sách CartItem và tính Tổng Tiền
-    public CartResponseDto toCartResponseDto(List<CartItem> entities) {
+
+    // Hàm 2: Nhận List từ Service và xử lý tổng thể
+    public CartResponseDto toCartResponseDto(List<CartItem> cartItems) {
+        if (cartItems == null) return null;
+
         CartResponseDto response = new CartResponseDto();
         
-        // Dùng chính hàm toResponseDto (Hàm 1) để map từng item trong List
-        List<CartItemResponseDto> dtos = entities.stream()
+        // 1. Lấy Cart ID từ item đầu tiên (vì tất cả items trong list đều cùng 1 giỏ hàng)
+        if (!cartItems.isEmpty()) {
+            response.setCartId(cartItems.get(0).getCart().getId());
+        }
+
+        // 2. Map list sang DTOs
+        List<CartItemResponseDto> dtos = cartItems.stream()
                 .map(this::toResponseDto)
                 .collect(Collectors.toList());
-        
         response.setItems(dtos);
 
-        // Tính tổng tiền cho cả giỏ hàng (Chỉ cộng những món được chọn)
-        BigDecimal totalPrice = dtos.stream()
-                .filter(item -> item.getIsSelected() != null && item.getIsSelected())
-                .map(CartItemResponseDto::getSubtotal)
-                .reduce(BigDecimal.ZERO, BigDecimal::add);
-        
-        response.setTotalPrice(totalPrice);
+        // 3. Tính tổng tiền từ những món được tick
+        BigDecimal total = cartItems.stream()
+        	    .filter(item -> Boolean.TRUE.equals(item.getIsSelected()))
+        	    .map(item -> item.getComputer().getPrice()
+        	        .multiply(BigDecimal.valueOf(item.getQuantity())))
+        	    .reduce(BigDecimal.ZERO, BigDecimal::add);
+
+        	response.setTotalPrice(total);
         
         return response;
     }
-
 }

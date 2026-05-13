@@ -23,6 +23,7 @@ public class ComputerMapper {
         dto.setName(entity.getName());
         dto.setPrice(entity.getPrice());
         dto.setDescription(entity.getDescription());
+        dto.setStockQuantity(entity.getStockQuantity());
 
         if (entity.getPrice() != null) {
             NumberFormat jpFormat = NumberFormat.getCurrencyInstance(Locale.JAPAN);

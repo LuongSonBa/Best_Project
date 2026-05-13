@@ -36,6 +36,7 @@ public class Computer extends BaseEntity {
     private String name;
     // 
     private String description;
+    
 
     @Lob
     @Column(name = "image", columnDefinition = "LONGBLOB")
@@ -62,7 +63,15 @@ public class Computer extends BaseEntity {
         return id;
     }
 
-    public BigDecimal getPrice() {
+    public Integer getStockQuantity() {
+		return stockQuantity;
+	}
+
+	public void setStockQuantity(Integer stockQuantity) {
+		this.stockQuantity = stockQuantity;
+	}
+
+	public BigDecimal getPrice() {
         return price;
     }
 

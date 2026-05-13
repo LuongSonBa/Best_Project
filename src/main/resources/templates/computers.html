@@ -4,48 +4,7 @@
     <meta charset="UTF-8">
     <title>Computer List</title>
     <link rel="stylesheet" th:href="@{/css/computers.css}">
-    <style>
-        /* CSS bổ trợ cho trạng thái hết hàng */
-        .sold-out-wrapper {
-            position: relative;
-        }
 
-        /* Làm mờ và đổi màu ảnh khi hết hàng */
-        .sold-out-overlay {
-            filter: grayscale(100%);
-            opacity: 0.5;
-            transition: 0.3s;
-        }
-
-        /* Nhãn SOLD OUT nổi lên trên ảnh */
-        .sold-out-badge {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background-color: #dc3545;
-            color: white;
-            padding: 5px 10px;
-            font-size: 12px;
-            font-weight: bold;
-            border-radius: 4px;
-            z-index: 10;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-
-        /* Style cho nút khi bị vô hiệu hóa */
-        .btn-sold-out {
-            background-color: #6c757d !important;
-            border-color: #6c757d !important;
-            color: #ffffff !important;
-            cursor: not-allowed !important;
-        }
-
-        .stock-info {
-            font-size: 0.9em;
-            margin: 5px 0;
-            color: #555;
-        }
-    </style>
 </head>
 <body>
 

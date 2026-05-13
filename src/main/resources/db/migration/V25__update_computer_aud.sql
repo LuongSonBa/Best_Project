@@ -1,0 +1,1 @@
+ALTER TABLE computer_aud ADD COLUMN stock_quantity INT DEFAULT 0;

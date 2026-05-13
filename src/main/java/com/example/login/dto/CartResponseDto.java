@@ -5,7 +5,14 @@ import java.util.List;
 
 public class CartResponseDto {
 	private List<CartItemResponseDto> items; // Danh sách các món hàng
-    private BigDecimal totalPrice;           // Tính năng: Tổng tiền của những món được chọn
+    private BigDecimal totalPrice;   
+    public Long getCartId() {
+		return cartId;
+	}
+	public void setCartId(Long cartId) {
+		this.cartId = cartId;
+	}
+	private Long cartId;// Tính năng: Tổng tiền của những món được chọn
 	public List<CartItemResponseDto> getItems() {
 		return items;
 	}

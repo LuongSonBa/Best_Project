@@ -3,6 +3,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.login.dto.CartItemRequestDto;
 import com.example.login.dto.CartItemResponseDto;
@@ -17,8 +18,7 @@ import com.example.login.repository.CartItemRepository;
 import com.example.login.repository.CartRepository;
 import com.example.login.repository.ComputerRepository;
 import com.example.login.repository.UserRepository;
-
-import org.springframework.transaction.annotation.Transactional;
+import com.example.login.spec.CartSpecification;
 @Service
 @Transactional
 public class CartServiceImpl implements CartService {
@@ -40,15 +40,15 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public CartItemResponseDto addToCart(String username, CartItemRequestDto request) {
-        User user = userRepository.findByUsername(username)
-                .orElseThrow(() -> new NotFoundException("User not found"));
-
-        Cart cart = cartRepository.findByUserId(user.getId())
-                .orElseGet(() -> createNewCart(user.getId()));
-
-        Optional<CartItem> existingItem = cartItemRepository.findByCartIdAndComputerId(cart.getId(),
-                request.getComputerId());
-
+        Cart cart = cartRepository.findOne(CartSpecification.getCartWithDetails(username))
+        		.orElseGet(() -> {
+        			User user = userRepository.findByUsername(username)
+        					.orElseThrow(() -> new NotFoundException("User not found"));
+        			return createNewCart(user.getId());
+        		});
+        Optional<CartItem> existingItem = cart.getCartItems().stream()
+        		.filter(item -> item.getComputer().getId().equals(request.getComputerId()))
+        		.findFirst();
         CartItem cartItem;
 
         if (existingItem.isPresent()) {
@@ -63,6 +63,7 @@ public class CartServiceImpl implements CartService {
             cartItem.setComputer(computer);
             cartItem.setQuantity(request.getQuantity());
             cartItem.setIsSelected(true);
+            cart.getCartItems().add(cartItem);
         }
         
         cartItemRepository.save(cartItem);
@@ -82,37 +83,30 @@ public class CartServiceImpl implements CartService {
     @Override
     @Transactional(readOnly = true)
     public CartResponseDto getCartByUsername(String username) {
-        User user = userRepository.findByUsername(username)
-                .orElseThrow(() -> new NotFoundException("User not found"));
-        
-        Cart cart = cartRepository.findByUserId(user.getId())
-                .orElseGet(() -> createNewCart(user.getId()));
-
-        List<CartItem> items = cartItemRepository.findByCartId(cart.getId());
-        return cartItemMapper.toCartResponseDto(items);
+        Cart cart = cartRepository.findOne(CartSpecification.getCartWithDetails(username))
+        		.orElseGet(() -> {
+        			User user = userRepository.findByUsername(username)
+        					.orElseThrow(() -> new NotFoundException("User not found"));
+        			return createNewCart(user.getId());
+        		});
+        return cartItemMapper.toCartResponseDto(cart.getCartItems());
     }
 
     @Override
     @Transactional
     public CartResponseDto updateFullCart(String username, List<CartItemRequestDto> requests) {
-        User user = userRepository.findByUsername(username)
-                .orElseThrow(() -> new NotFoundException("User not found"));
-
-        Cart cart = cartRepository.findByUserId(user.getId())
-                .orElseThrow(() -> new NotFoundException("Cart not found"));
-
+        Cart cart = cartRepository.findOne(CartSpecification.getCartWithDetails(username))
+        		.orElseThrow(() -> new NotFoundException("Cart Not Found"));
         for (CartItemRequestDto req : requests) {
-            CartItem item = cartItemRepository.findById(req.getCartItemId())
-                    .orElseThrow(() -> new NotFoundException("Item not found: " + req.getCartItemId()));
-            
-            if (item.getCart().getId().equals(cart.getId())) {
-                item.setQuantity(req.getQuantity());
-                item.setIsSelected(req.getIsSelected());
-                cartItemRepository.save(item);
-            }
+            cart.getCartItems().stream()
+                .filter(item -> item.getId().equals(req.getCartItemId()))
+                .findFirst()
+                .ifPresent(item -> {
+                    item.setQuantity(req.getQuantity());
+                    item.setIsSelected(req.getIsSelected());
+                });
         }
-        
-        return getCartByUsername(username);
+        return cartItemMapper.toCartResponseDto(cart.getCartItems());
     }
 
     @Override

@@ -23,10 +23,12 @@ public class UserService {
 	}
 
 	public UserDto getUserByUsername(String username) {
-		User user = userRepository.findByUsername(username)
-				.orElseThrow(() -> new NotFoundException("Người dùng không tồn tại"));
+	    User user = userRepository.findByUsername(username)
+	            .orElseThrow(() -> new NotFoundException("Người dùng không tồn tại"));
 
-		return new UserDto(user.getUsername(), user.getId(), user.getRole());
+	    // Trả về DTO có đầy đủ thông tin để Checkout
+	    return new UserDto(user.getUsername(), user.getId(), user.getRole(), 
+	                       user.getPhoneNumber(), user.getAddress());
 	}
 
 	@Transactional
@@ -42,5 +44,9 @@ public class UserService {
 		userRepository.save(user);
 
 		return "Đổi mật khẩu thành công!";
+	}
+	public User findByUsername(String username) {
+	    return userRepository.findByUsername(username)
+	            .orElseThrow(() -> new NotFoundException("Người dùng không tồn tại"));
 	}
 }
