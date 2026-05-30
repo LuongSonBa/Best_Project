@@ -21,18 +21,18 @@ public class OrderResponseDto {
     private String shippingAddress;
     private BigDecimal totalAmount;         // Tổng tiền cuối cùng
     private List<OrderItemResponseDto> items; // Chi tiết từng món trong đơn
+    private String base64Image;
     
     
-	public OrderResponseDto(Long id, LocalDateTime createdAt, OrderStatus status, String phoneNumber,
-			String shippingAddress, BigDecimal totalAmount, List<OrderItemResponseDto> items) {
-		super();
-		this.id = id;
-		this.createdAt = createdAt;
-		this.status = status;
-		this.phoneNumber = phoneNumber;
-		this.shippingAddress = shippingAddress;
-		this.totalAmount = totalAmount;
-		this.items = items;
+    
+	public String getBase64Image() {
+		return base64Image;
+	}
+	public void setBase64Image(String base64Image) {
+		this.base64Image = base64Image;
+	}
+	public OrderStatus getStatus() {
+		return status;
 	}
 	public void setStatus(OrderStatus status) {
 		this.status = status;

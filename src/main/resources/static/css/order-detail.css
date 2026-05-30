@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+.card {
+	border-radius: 12px;
+}
+
+.badge {
+	padding: 8px 16px;
+	font-size: 0.9rem;
+}
+
+.status-pending {
+	background-color: #fff3cd;
+	color: #856404;
+}
+
+.status-cancelled {
+	background-color: #f8d7da;
+	color: #721c24;
+}
+
+.status-done {
+	background-color: #d4edda;
+	color: #155724;
+}
+
+.order-item {
+	display: flex;
+	align-items: center;
+	padding: 15px 0;
+	border-bottom: 1px solid #f0f0f0;
+}
+
+.order-item:last-child {
+	border-bottom: none;
+}
+
+.item-img {
+	width: 80px;
+	height: 80px;
+	object-fit: cover;
+	border-radius: 8px;
+	background-color: #f8f9fa;
+}
+
+.uppercase {
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+
+.product-img {
+	width: 80px;
+	height: 80px;
+	object-fit: cover;
+	border-radius: 8px;
+	background-color: #f8f9fa;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}

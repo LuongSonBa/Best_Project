@@ -1,5 +1,7 @@
 package com.example.login.entity;
 
+import java.math.BigDecimal;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -51,6 +53,23 @@ public class CartItem {
 	}
 	public Long getId() {
 		return id;
+	}
+	// Getter an toàn cho Cart
+	public Long getCartId() {
+	    return cart != null ? cart.getId() : null;
+	}
+
+	// Getter an toàn cho Computer
+	public Long getComputerId() {
+	    return computer != null ? computer.getId() : null;
+	}
+
+	public String getComputerName() {
+	    return computer != null ? computer.getName() : null;
+	}
+
+	public BigDecimal getComputerPrice() {
+	    return computer != null ? computer.getPrice() : null;
 	}
     
 

@@ -6,12 +6,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
-
+import com.example.login.config.AuditorAwareImpl;
 import com.example.login.dto.ComputerResponseDto;
 import com.example.login.service.ComputerService;
 import com.example.login.service.ManufactureService;
@@ -19,60 +20,46 @@ import com.example.login.service.ManufactureService;
 @Controller
 public class ComputerPageController {
 
-    private final ComputerService computerService;
-    private final ManufactureService manufactureService;
-    private static final Logger log = LoggerFactory.getLogger(ComputerPageController.class);
+	private final AuditorAwareImpl auditorProvider;
 
-    public ComputerPageController(ComputerService computerService, ManufactureService manufactureService) {
-        this.computerService = computerService;
-        this.manufactureService = manufactureService;
-    }
+	private final ComputerService computerService;
+	private final ManufactureService manufactureService;
+	private static final Logger log = LoggerFactory.getLogger(ComputerPageController.class);
 
-    @GetMapping("/computers")
-    public String showComputers(
-            Model model,
-            @RequestParam(required = false) String name,
-            @RequestParam(required = false) String manufactureName,
-            @RequestParam(required = false) BigDecimal maxPrice,
-            @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "5") int size
-    ) {
+	public ComputerPageController(ComputerService computerService, ManufactureService manufactureService,
+			AuditorAwareImpl auditorProvider) {
+		this.computerService = computerService;
+		this.manufactureService = manufactureService;
+		this.auditorProvider = auditorProvider;
+	}
 
-        log.info("Search computers name={}, manufacture={}, maxPrice={}, page={}",
-                name, manufactureName, maxPrice, page);
+	@GetMapping("/computers")
+	public String showComputer(Model model, @RequestParam(required = false) String name,
+											@RequestParam(required = false) String manufactureName, 	
+											@RequestParam(required = false) BigDecimal maxPrice,
+											@RequestParam(defaultValue = "0") int page, 
+											@RequestParam(defaultValue = "5") int size) {
+		Page<ComputerResponseDto> computerPage = computerService.search(name, manufactureName, maxPrice,
+				PageRequest.of(page, size));
+		model.addAttribute("computers", computerPage.getContent());
+		model.addAttribute("currentPage", computerPage.getNumber());
+		model.addAttribute("totalPage", computerPage.getTotalPages());
 
-        Page<ComputerResponseDto> computerPage =
-                computerService.search(
-                        name,
-                        manufactureName,
-                        maxPrice,
-                        PageRequest.of(page, size)
-                );
+		return "computers";
+	}
 
-        model.addAttribute("computers", computerPage.getContent());
-        model.addAttribute("currentPage", computerPage.getNumber());
-        model.addAttribute("totalPages", computerPage.getTotalPages());
+	@GetMapping("computers/{id}")
+	public String computerDetail(@PathVariable Long id, Model model) {
+		ComputerResponseDto computer = computerService.getComputerById(id);
+		model.addAttribute("computer", computer);
+		model.addAttribute("manufactures", manufactureService.findAll());
+		return "computers-detail";
+	}
 
-        return "computers";
-    }
-
-    @GetMapping("/computers/{id}")
-    public String getComputerDetail(@PathVariable Long id, Model model) {
-        log.info("Request computer detail with id={}", id);
-        
-        ComputerResponseDto computer = computerService.getComputerById(id);
-        log.info("Computer loaded successfully: id={}, name={}", computer.getId(), computer.getName());
-        
-        model.addAttribute("computer", computer);
-        model.addAttribute("manufactures", manufactureService.findAll());
-
-        return "computers-detail"; 
-    }
-
-    @GetMapping("/computers/add")
-    public String showAddForm(Model model) {
-        log.info("Request show add computer form");
-        model.addAttribute("manufactures", manufactureService.findAll());
-        return "computer-add";
-    }
+	@GetMapping("/computers/add")
+	public String showAddForm(Model model) {
+		log.info("Request show add computer form");
+		model.addAttribute("manufactures", manufactureService.findAll());
+		return "computer-add"; // add thêm feature colums quantity trong stock khi add new computer
+	}
 }

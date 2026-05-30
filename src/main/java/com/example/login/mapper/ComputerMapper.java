@@ -12,63 +12,57 @@ import com.example.login.entity.Manufacture;
 
 @Component
 public class ComputerMapper {
+	  public ComputerResponseDto toDto(Computer entity) {
+		  if (entity == null) {
+			  return null;
+		  }
+		  ComputerResponseDto dto = new ComputerResponseDto();
+		  dto.setDescription(entity.getDescription());
+		  dto.setId(entity.getId());
+		  dto.setName(entity.getName());
+		  dto.setPrice(entity.getPrice());
+		  dto.setStockQuantity(entity.getStockQuantity());
+		  
+		  if (entity.getPrice() != null) {
+			  NumberFormat jpFormat = NumberFormat.getCurrencyInstance(Locale.JAPAN);
+			  dto.setFormattedPrice(jpFormat.format(entity.getPrice()));
+		  }
+		  
+		  if (entity.getId() != null) {
+			  dto.setImagePath("api/computers/image/" + entity.getId());
+		  }
+		  
+		  if (entity.getManufacture() != null) {
+			  dto.setManufactureName(entity.getManufacture().getName());
+			  dto.setManufactureId(entity.getManufacture().getId());
+		  }
+		  return dto;
+	  }
+	  public Computer toEntity (ComputerRequestDto dto, Manufacture manufacture) {
+		  if (dto == null) {
+			  return null;
+		  }
+		  Computer entity = new Computer();
+		  entity.setManufacture(manufacture);
+		  entity.setDescription(dto.getDescription());
+		  entity.setName(dto.getName());
+		  entity.setPrice(dto.getPrice());
+		  
+		  return entity;
+	  }
 
-    public ComputerResponseDto toDto(Computer entity) {
-        if (entity == null) {
-            return null;
-        }
-
-        ComputerResponseDto dto = new ComputerResponseDto();
-        dto.setId(entity.getId());
-        dto.setName(entity.getName());
-        dto.setPrice(entity.getPrice());
-        dto.setDescription(entity.getDescription());
-        dto.setStockQuantity(entity.getStockQuantity());
-
-        if (entity.getPrice() != null) {
-            NumberFormat jpFormat = NumberFormat.getCurrencyInstance(Locale.JAPAN);
-            dto.setFormattedPrice(jpFormat.format(entity.getPrice()));
-        }
-
-        if (entity.getId() != null) {
-            dto.setImagePath("/api/computers/image/" + entity.getId());
-        }
-
-        if (entity.getManufacture() != null) {
-            dto.setManufactureId(entity.getManufacture().getId());
-            dto.setManufactureName(entity.getManufacture().getName());
-        }
-
-        return dto;
-    }
-
-    public Computer toEntity(ComputerRequestDto dto, Manufacture manufacture) {
-        if (dto == null) {
-            return null;
-        }
-
-        Computer entity = new Computer();
-        entity.setName(dto.getName());
-        entity.setPrice(dto.getPrice());
-        entity.setDescription(dto.getDescription());
-        entity.setManufacture(manufacture);
-        
-        return entity;
-    }
-
-    public void updateEntity(ComputerRequestDto dto, Computer entity) {
-        if (dto == null || entity == null) {
-            return;
-        }
-
-        if (dto.getName() != null) {
-            entity.setName(dto.getName());
-        }
-        if (dto.getPrice() != null) {
-            entity.setPrice(dto.getPrice());
-        }
-        if (dto.getDescription() != null) {
-            entity.setDescription(dto.getDescription());
-        }
-    }
+	  public void updateEntity (ComputerRequestDto dto, Computer entity) {
+		if (dto == null) {
+			return;
+		}
+		if (dto.getName() != null) {
+			entity.setName(dto.getName());
+		}
+		if (dto.getPrice() != null) {
+			entity.setPrice(dto.getPrice());
+		}
+		if (dto.getDescription() != null) {
+			entity.setDescription(dto.getDescription());
+		}
+	  }
 }

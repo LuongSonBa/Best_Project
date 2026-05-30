@@ -1,11 +1,14 @@
 package com.example.login.entity;
 
 import java.math.BigDecimal;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
@@ -31,17 +34,29 @@ public class OrderItem {
 
     // Giá quan trọng nhất: Lưu lại giá tại thời điểm bấm nút mua
     private BigDecimal priceAtPurchase;
+    @Lob
+    @Column(name = "image", columnDefinition = "LONGBLOB")
+    private byte[] image;
 
     // --- Constructors ---
     public OrderItem() {}
 
     // --- Getters and Setters ---
+    
 
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public byte[] getImage() {
+		return image;
+	}
+
+	public void setImage(byte[] image) {
+		this.image = image;
+	}
+
+	public void setId(Long id) {
         this.id = id;
     }
 

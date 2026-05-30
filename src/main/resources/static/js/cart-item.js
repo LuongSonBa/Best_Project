@@ -19,20 +19,25 @@ function updateQuantity(cartItemId, delta) {
 // 2. Hàm lưu tất cả thay đổi (Đã được tối ưu)
 async function saveAllChanges() {
     const requestData = [];
-    // Quét tất cả các dòng đang có trong bảng
     const rows = document.querySelectorAll('tr[id^="cart-item-"]');
-    
-    if (rows.length === 0) return;
+
+    // Nếu không còn item nào → reset totalPrice và thoát
+    if (rows.length === 0) {
+        const totalPriceElem = document.getElementById('total-price');
+        if (totalPriceElem) {
+            totalPriceElem.innerText = '0 ¥';
+        }
+        return;
+    }
 
     rows.forEach(row => {
         const idStr = row.id.replace('cart-item-', '');
         const qty = parseInt(row.querySelector('.quantity-input').value);
-        const selected = row.querySelector('.item-checkbox').checked;
-        
+
         requestData.push({
             cartItemId: parseInt(idStr),
             quantity: qty,
-            isSelected: selected
+            isSelected: true
         });
     });
 
@@ -49,15 +54,14 @@ async function saveAllChanges() {
         if (response.ok) {
             const data = await response.json();
             const formatter = new Intl.NumberFormat('ja-JP');
-            
-            // Cập nhật Tổng tiền (Total Price)
+
+            // Cập nhật tổng tiền
             const totalPriceElem = document.getElementById('total-price');
             if (totalPriceElem) {
-                // Đảm bảo data.totalPrice từ server trả về là con số đúng
                 totalPriceElem.innerText = formatter.format(data.totalPrice) + ' ¥';
             }
-            
-            // Cập nhật Subtotal từng dòng từ dữ liệu server trả về
+
+            // Cập nhật subtotal từng dòng
             if (data.items && Array.isArray(data.items)) {
                 data.items.forEach(item => {
                     const itemRow = document.getElementById(`cart-item-${item.cartItemId}`);
@@ -82,34 +86,51 @@ function toggleSelection(itemId) {
 
 // 4. Hàm xóa sản phẩm
 async function deleteItem(itemId) {
-    if (!confirm("Bạn có chắc muốn xóa sản phẩm này?")) return;
+    if (!confirm("Xóa nhé?")) return;
     
     try {
         const res = await fetch(`/api/cart/delete/${itemId}`, { method: 'DELETE' });
         if (res.ok) {
             const row = document.getElementById(`cart-item-${itemId}`);
             if (row) row.remove();
-            // Sau khi xóa, tính toán lại tổng tiền của các món còn lại
-            saveAllChanges();
+            
+            const remainingItems = document.querySelectorAll('tr[id^="cart-item-"]');
+            if (remainingItems.length === 0) {
+                location.reload(); 
+            } else {
+                saveAllChanges();
+            }
         }
     } catch (e) {
-        console.error("Lỗi xóa sản phẩm:", e);
+        console.error("Lỗi xóa:", e);
     }
 }
-// File: cart.js (hoặc trong <script> của cart.html)
-
+let cartItems = Array.from(document.querySelectorAll('tr[id^="cart-item-"]'));
+function getCartItems() {
+    return Array.from(document.querySelectorAll('tr[id^="cart-item-"]'));
+}
 function checkout() {
-    console.log("Đang chuẩn bị chuyển sang trang Checkout...");
+    console.log("Preparing to navigate to the Checkout page...");
 
-    // Gọi hàm lưu tất cả thay đổi (số lượng, tích chọn) mà bạn đã làm
-    // Giả sử hàm đó tên là saveAllChanges() và trả về một Promise
-    saveAllChanges() 
-        .then(response => {
-            // Nếu lưu thành công vào DB rồi thì mới chuyển trang
+    // LẤY DỮ LIỆU MỚI NHẤT TẠI THỜI ĐIỂM BẤM NÚT
+    const currentItems = document.querySelectorAll('tr[id^="cart-item-"]');
+
+    // 1. Kiểm tra giỏ hàng có trống không
+    if (currentItems.length === 0) {
+        alert("Giỏ hàng của mày đang trống không, mua cái gì mà đòi thanh toán? Kkk");
+        return;
+    }
+
+    // 2. Kiểm tra xem có món nào được CHỌN (isSelected) không? 
+    // Nếu mày có logic checkbox, thì phải check xem có thằng nào được tích không nữa mới chuẩn.
+    
+    // 3. Lưu toàn bộ rồi mới đi
+    saveAllChanges()
+        .then(() => {
             window.location.href = '/checkout';
         })
         .catch(error => {
-            console.error("Lỗi khi lưu giỏ hàng:", error);
-            alert("Không thể lưu trạng thái giỏ hàng, vui lòng thử lại!");
+            console.error("Failed to save cart:", error);
+            alert("Không lưu được giỏ hàng, thử lại xem nào!");
         });
 }

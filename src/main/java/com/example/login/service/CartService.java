@@ -11,10 +11,10 @@ public interface CartService {
 		String username,
 		CartItemRequestDto request
 		);
-	CartResponseDto getCartByUsername(String username);
+	CartResponseDto getCartByUserName(String username);
 	
 	CartResponseDto updateFullCart(String username, List<CartItemRequestDto> requests);
 	
-	public void deleteItem(String username, Long itemId);
+	public void deleteItem(Long itemId,String username);
 	}
 	

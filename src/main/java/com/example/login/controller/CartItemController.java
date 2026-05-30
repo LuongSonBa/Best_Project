@@ -29,17 +29,12 @@ public class CartItemController {
     ) {
         this.cartService = cartService;
     }
-
     @PostMapping("/add")
-    public ResponseEntity<CartItemResponseDto> addToCart(
-            @RequestBody CartItemRequestDto request,
-            Principal principal
-    ) {
+    ResponseEntity<CartItemResponseDto> addToCart(@RequestBody CartItemRequestDto request, Principal principal) {
     	String username = principal.getName();
-        return ResponseEntity.ok(
-                cartService.addToCart(username, request)
-        );
+    	return ResponseEntity.ok(cartService.addToCart(username, request));
     }
+
     @PutMapping("/update-all")
     public ResponseEntity<CartResponseDto> updateAll(Principal principal, @RequestBody List<CartItemRequestDto> requests) {
     	String username = principal.getName();
@@ -49,7 +44,7 @@ public class CartItemController {
     @DeleteMapping("/delete/{itemId}")
     public ResponseEntity<Void> deleteItem(@PathVariable Long itemId,Principal principal) {
     	String username = principal.getName();
-        cartService.deleteItem(username,itemId);
+        cartService.deleteItem(itemId,username);
         return ResponseEntity.ok().build();
     }
 }

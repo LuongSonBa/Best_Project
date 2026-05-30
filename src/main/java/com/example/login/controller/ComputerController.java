@@ -18,30 +18,27 @@ public class ComputerController {
     public ComputerController(ComputerService computerService) {
         this.computerService = computerService;
     }
-
+    
     @GetMapping("/image/{id}")
     public ResponseEntity<byte[]> getComputerImage(@PathVariable Long id) {
-        byte[] image = computerService.getComputerImage(id);
-        return ResponseEntity.ok()
-                .contentType(MediaType.IMAGE_JPEG)
-                .body(image);
+    	byte[] image = computerService.getComputerImage(id);
+    	return ResponseEntity.ok()
+    			.contentType(MediaType.IMAGE_JPEG)
+    			.body(image);
     }
-
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<ComputerResponseDto> createComputer(
-            @RequestPart("data") ComputerRequestDto dto,
-            @RequestPart(value = "image", required = false) MultipartFile imageFile) throws IOException {
-    	System.out.println("abc");
-        return ResponseEntity.ok(computerService.createComputer(dto, imageFile));
-        
+    public ResponseEntity<ComputerResponseDto> createComputer (@RequestPart("data")ComputerRequestDto dto,
+    														   @RequestPart("image")MultipartFile imageFile) throws IOException {
+    	return ResponseEntity.ok(computerService.createComputer(dto, imageFile));
     }
     
     @PutMapping(value = "/{id}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<ComputerResponseDto> updateComputer(
-            @PathVariable Long id,
-            @RequestPart("data") ComputerRequestDto dto,
-            @RequestPart(value = "image", required = false) MultipartFile imageFile) throws IOException {
-        return ResponseEntity.ok(computerService.updateComputer(id, dto, imageFile));
+    public ResponseEntity<ComputerResponseDto> updateComputer (
+    										  @PathVariable Long id,
+    										  @RequestPart ("data") ComputerRequestDto dto,
+    										  @RequestPart (value = "image", required = false) MultipartFile imageFile
+    									) throws IOException {
+    	return ResponseEntity.ok(computerService.updateComputer(id, dto, imageFile));
     }
 
     @DeleteMapping("/{id}")

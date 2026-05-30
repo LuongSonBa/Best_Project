@@ -14,16 +14,20 @@ public class OrderItemResponseDto {
     private Integer quantity;     // Số lượng đã mua
     private BigDecimal priceAtPurchase; // Khớp với Entity cho đỡ nhầm  
     // Giá tại thời điểm mua (quan trọng!)
+ // 🔥 THÊM TRƯỜNG NÀY VÀO
+    private String imageBase64; 
+
+    // --- Getter và Setter ---
+    public String getImageBase64() {
+        return imageBase64;
+    }
+
+    public void setImageBase64(String imageBase64) {
+        this.imageBase64 = imageBase64;
+    }
     
 	public Long getComputerId() {
 		return computerId;
-	}
-	public OrderItemResponseDto(Long computerId, String computerName, Integer quantity, BigDecimal priceAtPurchase) {
-		super();
-		this.computerId = computerId;
-		this.computerName = computerName;
-		this.quantity = quantity;
-		this.priceAtPurchase = priceAtPurchase;
 	}
 	public void setComputerId(Long computerId) {
 		this.computerId = computerId;

@@ -31,4 +31,3 @@ public class ComputerSpecification {
         };
     }
 }
-// nghiên cứu metal JPA modelcen - bỏ thư viện

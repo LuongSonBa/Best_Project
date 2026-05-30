@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -30,25 +31,24 @@ public class Order {
     @Enumerated(EnumType.STRING)
     private OrderStatus status; // PENDING, COMPLETED, CANCELLED...
 
-    private LocalDateTime createdAt; // Ngày tạo đơn
+    @Column(name = "created_at") // Nói cho Hibernate: "Dùng cột order_date nhé!"
+    private LocalDateTime createdAt;
 
     // --- 2 TRƯỜNG QUAN TRỌNG BẠN ĐANG THIẾU ---
-    private String phoneNumber;     // Lưu SĐT lúc đặt hàng
-    private String shippingAddress; // Lưu địa chỉ lúc đặt hàng
+    @Column(name = "phone_number") // Mày check lại xem bảng SQL của mày đã có cột này chưa nhé!
+    private String phoneNumber;
+    @Column(name = "shipping_address") // Check luôn cột này trong SQL
+    private String shippingAddress;
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderItem> orderItems;
 
-    public List<OrderItem> getOrderItems() {
-		return orderItems;
-	}
 
-	public void setOrderItems(List<OrderItem> orderItems) {
-		this.orderItems = orderItems;
-	}
 
 	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderItem> items;
 
-    private BigDecimal totalAmount; // Tổng tiền cuối cùng
+	@Column(name = "total_amount") // Khớp với cái DECIMAL(19, 2) trong SQL của mày
+	private BigDecimal totalAmount;
 
     // --- Constructors ---
     public Order() {
@@ -57,6 +57,13 @@ public class Order {
     }
 
     // --- Getters và Setters (Nhớ update lại theo tên trường mới nhé) ---
+    public List<OrderItem> getOrderItems() {
+		return orderItems;
+	}
+
+	public void setOrderItems(List<OrderItem> orderItems) {
+		this.orderItems = orderItems;
+	}
     public String getPhoneNumber() { return phoneNumber; }
     public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
 

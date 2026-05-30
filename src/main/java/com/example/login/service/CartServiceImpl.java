@@ -46,9 +46,10 @@ public class CartServiceImpl implements CartService {
         					.orElseThrow(() -> new NotFoundException("User not found"));
         			return createNewCart(user.getId());
         		});
+        
         Optional<CartItem> existingItem = cart.getCartItems().stream()
-        		.filter(item -> item.getComputer().getId().equals(request.getComputerId()))
-        		.findFirst();
+        								.filter(item -> item.getCart().getId().equals(request.getComputerId()))
+        								.findFirst();
         CartItem cartItem;
 
         if (existingItem.isPresent()) {
@@ -81,8 +82,8 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    @Transactional(readOnly = true)
-    public CartResponseDto getCartByUsername(String username) {
+    @Transactional
+    public CartResponseDto getCartByUserName(String username) {
         Cart cart = cartRepository.findOne(CartSpecification.getCartWithDetails(username))
         		.orElseGet(() -> {
         			User user = userRepository.findByUsername(username)
@@ -111,7 +112,7 @@ public class CartServiceImpl implements CartService {
 
     @Override
     @Transactional
-    public void deleteItem(String username, Long itemId) {
+    public void deleteItem(Long itemId,String username) {
         User user = userRepository.findByUsername(username)
                 .orElseThrow(() -> new NotFoundException("User not found"));
         

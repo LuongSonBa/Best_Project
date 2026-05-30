@@ -73,9 +73,12 @@ public class SecurityConfig {
 
                 .requestMatchers(org.springframework.http.HttpMethod.POST,
                         "/api/computers/**").hasRole("ADMIN")
+                .requestMatchers("/api/admin/**").hasRole("ADMIN") // Chỉ Admin mới vào được link này
+                .requestMatchers("/api/orders/cancel/**").hasRole("USER") // User được quyền hủy đơn của mình
 
                 // Các request còn lại cần login
                 .anyRequest().authenticated()
+                
             )
 
             .formLogin(form -> form

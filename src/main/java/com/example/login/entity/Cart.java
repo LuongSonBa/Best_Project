@@ -1,5 +1,6 @@
 package com.example.login.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -25,7 +26,7 @@ public class Cart {
 	    
 
 	    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, orphanRemoval = true)
-	    private List<CartItem> cartItems; // Tên biến này phải khớp với Specification
+	    private List<CartItem> cartItems = new ArrayList<>();; // Tên biến này phải khớp với Specification
 	    
 
 		public List<CartItem> getCartItems() {

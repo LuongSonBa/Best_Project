@@ -38,6 +38,8 @@ public class ComputerService {
         this.manufactureRepository = manufactureRepository;
         this.computerMapper = computerMapper;
     }
+
+    
     public Page<ComputerResponseDto> search(
             String name,
             String manufactureName,
@@ -62,6 +64,12 @@ public class ComputerService {
         return computerRepository.findAll(spec, pageable)
         		.map(computerMapper::toDto);
     }
+    
+    public byte[] getComputerImage (Long id) {
+    	Computer computer = computerRepository.findById(id)
+    			.orElseThrow(() -> new NotFoundException("Image of id is not found"));
+    	return computer.getImage();
+    }
 
     public ComputerResponseDto getComputerById(Long id) {
         Computer computer = computerRepository.findById(id)
@@ -69,43 +77,35 @@ public class ComputerService {
         return computerMapper.toDto(computer);
     }
 
-    public byte[] getComputerImage(Long id) {
-        Computer computer = computerRepository.findById(id)
-                .orElseThrow(() -> new NotFoundException("Computer not found"));
-        return computer.getImage();
-    }
-
     public ComputerResponseDto createComputer(ComputerRequestDto dto, MultipartFile imageFile) throws IOException {
-        Manufacture manufacture = manufactureRepository.findById(dto.getManufactureId())
-                .orElseThrow(() -> new NotFoundException("Manufacture not found"));
-
-        Computer entity = computerMapper.toEntity(dto, manufacture);
-        if (imageFile != null && !imageFile.isEmpty()) {
-            entity.setImage(imageFile.getBytes());
-        }
-
-        return computerMapper.toDto(computerRepository.save(entity));
-    }
-
-    public ComputerResponseDto updateComputer(Long id, ComputerRequestDto dto, MultipartFile imageFile) throws IOException {
+    	Manufacture manufacture = manufactureRepository.findById(dto.getManufactureId())
+    			.orElseThrow(() -> new NotFoundException("Manufacture not found"));
     	
-        Computer computer = computerRepository.findById(id)
-                .orElseThrow(() -> new NotFoundException("Computer not found"));
-
-
-        if (imageFile != null && !imageFile.isEmpty()) {
-            computer.setImage(imageFile.getBytes());
-        }
-
-        computerMapper.updateEntity(dto, computer);
-
-        if (dto.getManufactureId() != null) {
-            Manufacture manufacture = manufactureRepository.findById(dto.getManufactureId())
-                    .orElseThrow(() -> new NotFoundException("Manufacture không tồn tại"));
-            
-            computer.setManufacture(manufacture);
-        }
-        return computerMapper.toDto(computerRepository.save(computer));
+    	Computer entity = computerMapper.toEntity(dto, manufacture);
+    	
+    	if(imageFile != null || !imageFile.isEmpty()) {
+    		entity.setImage(imageFile.getBytes());
+    	}
+    	return computerMapper.toDto(computerRepository.save(entity));
+    }
+     
+    public ComputerResponseDto updateComputer(Long id,ComputerRequestDto dto, MultipartFile imageFile) throws IOException {
+    	Computer computer = computerRepository.findById(id)
+    			.orElseThrow(() -> new NotFoundException("Computer not found"));
+    	
+    	if (imageFile != null && !imageFile.isEmpty()) {
+    		computer.setImage(imageFile.getBytes());
+    	}
+    	
+    	computerMapper.updateEntity(dto, computer);
+    	
+    	if (dto.getManufactureId() != null ) {
+    		Manufacture manufacture = manufactureRepository.findById(dto.getManufactureId())
+    				.orElseThrow(() -> new NotFoundException("Manufacture not found"));
+    		computer.setManufacture(manufacture);
+    	}
+    	return computerMapper.toDto(computerRepository.save(computer));
+    	
     }
 
     public void deleteComputer(Long id) {
